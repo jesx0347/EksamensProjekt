@@ -42,8 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Afvikling.cs" />
+    <Compile Include="BilletType.cs" />
+    <Compile Include="IHaveID.cs" />
+    <Compile Include="Kategori.cs" />
+    <Compile Include="ODEONEvent.cs" />
+    <Compile Include="Omkostninger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sal.cs" />
+    <Compile Include="SalgsTal.cs" />
+    <Compile Include="VariableIndtjening.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
