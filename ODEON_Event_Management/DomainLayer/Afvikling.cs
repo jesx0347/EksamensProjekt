@@ -11,5 +11,10 @@ namespace DomainLayer
         public DateTime Dato;
         public Sal Sal;
         public List<BilletType> BilletTyper = new List<BilletType>();
+
+        public Afvikling(DateTime date)
+        {
+            Dato = date;
+        }
     }
 }

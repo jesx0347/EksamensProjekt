@@ -19,7 +19,7 @@ namespace ApplicationLayer
                     return item;
                 }
             }
-            throw new ArgumentException($"Sal med navn {name} findes ikke");
+            throw new ArgumentException($"Sal med navn '{name}' findes ikke");
         }
     }
 }

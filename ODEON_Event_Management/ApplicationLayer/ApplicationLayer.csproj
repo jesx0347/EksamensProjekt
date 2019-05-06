@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractRepository.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="DataBaseController.cs" />
     <Compile Include="KategoriRepository.cs" />
     <Compile Include="ODEONEventRepository.cs" />
     <Compile Include="Program.cs" />
@@ -57,6 +59,9 @@
       <Project>{f6efe005-f6d8-405f-9b15-7f211d7fd5f7}</Project>
       <Name>DomainLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConnectionString.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

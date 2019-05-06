@@ -9,5 +9,6 @@ namespace DomainLayer
     public class VariableIndtjening
     {
         public decimal Beløb;
+        public string Note;
     }
 }

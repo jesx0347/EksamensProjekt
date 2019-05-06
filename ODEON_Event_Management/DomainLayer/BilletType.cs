@@ -11,5 +11,22 @@ namespace DomainLayer
         public int Udbud;
         public decimal Pris;
         public List<SalgsTal> SamledeSalgsTal = new List<SalgsTal>();
+        public int TotalSold
+        {
+            get
+            {
+                int result = 0;
+                foreach (SalgsTal item in SamledeSalgsTal)
+                {
+                    result += item.Solgt;
+                }
+                return result;
+            }
+        }
+        public BilletType(int udbud, decimal pris)
+        {
+            Udbud = udbud;
+            Pris = pris;
+        }
     }
 }

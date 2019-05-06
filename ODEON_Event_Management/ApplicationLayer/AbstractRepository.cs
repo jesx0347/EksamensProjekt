@@ -37,7 +37,7 @@ namespace ApplicationLayer
             }
         }
 
-        public void AddItem(TContent item)
+        public virtual void AddItem(TContent item)
         {
             Items.Add(item);
         }

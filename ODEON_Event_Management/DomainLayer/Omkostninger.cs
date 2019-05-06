@@ -9,9 +9,10 @@ namespace DomainLayer
     public class Omkostninger
     {
         public decimal MarkedsFøring;
-        public decimal KODA;
+        public double KODA;
         public decimal Garantisum;
         public double ArtistSplit;
         public decimal VariableOmkostninger;
+        public string Note;
     }
 }

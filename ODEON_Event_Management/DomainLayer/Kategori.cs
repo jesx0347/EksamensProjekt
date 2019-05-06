@@ -9,6 +9,11 @@ namespace DomainLayer
     public class Kategori : IHaveID
     {
         public int ID => throw new NotImplementedException();
-        public string name;
+        public string Navn;
+
+        public override string ToString()
+        {
+            return Navn;
+        }
     }
 }

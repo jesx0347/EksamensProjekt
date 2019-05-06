@@ -10,5 +10,9 @@ namespace DomainLayer
     {
         public string Navn { get; set; }
         public int ID => throw new NotImplementedException();
+        public override string ToString()
+        {
+            return Navn;
+        }
     }
 }
