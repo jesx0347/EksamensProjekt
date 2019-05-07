@@ -21,5 +21,7 @@ namespace ApplicationLayer
             ConnectionString = sr.ReadLine();
             sr.Close();
         }
+
+
     }
 }
