@@ -24,6 +24,7 @@ namespace DomainLayer
         public VariableIndtjening VariableIndtjening;
         public List<Afvikling> Afviklinger = new List<Afvikling>();
         public List<Kategori> Kategorier = new List<Kategori>();
+        public UnderskudsGodtgørelse Godtgørelse;
         public decimal BreakEven
         {
             get
