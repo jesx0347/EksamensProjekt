@@ -13,17 +13,18 @@ namespace ApplicationLayer
         protected List<TContent> Items;
         private static bool IsInstanceCreated = false;
         private static TSingleton _instance;
-        public static TSingleton Instance
+        public static TSingleton Instance 
         {
-            get
+            get 
             {
-                if (!IsInstanceCreated)
-                {
-                    _instance = new TSingleton();
-                }
                 return _instance;
             }
         }
+
+        static AbstractRepository()
+        {
+            _instance = new TSingleton();
+        } 
 
         protected AbstractRepository()
         {
