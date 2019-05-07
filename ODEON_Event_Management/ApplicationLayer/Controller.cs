@@ -71,11 +71,7 @@ namespace ApplicationLayer
 
         public void IndskrivOmkostninger(int IDEvent, decimal marked, double KODA, decimal garantiSum, double split)
         {
-            Omkostninger omkostninger = new Omkostninger();
-            omkostninger.MarkedsFøring = marked;
-            omkostninger.KODA = KODA;
-            omkostninger.Garantisum = garantiSum;
-            omkostninger.ArtistSplit = split;
+            Omkostninger omkostninger = new Omkostninger(marked, KODA, garantiSum, split);
             ODEONEventRepository.Instance.GetItem(IDEvent).Omkostninger = omkostninger;
         }
 
