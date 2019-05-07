@@ -8,6 +8,7 @@ namespace DomainLayer
 {
     public class Afvikling
     {
+        public int ID;
         public DateTime Dato;
         public Sal Sal;
         public List<BilletType> BilletTyper = new List<BilletType>();
