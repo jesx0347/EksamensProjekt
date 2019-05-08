@@ -8,7 +8,7 @@ namespace DomainLayer
 {
     public class ODEONEvent : IHaveID
     {
-        private static int _GetNextID;
+        private static int _GetNextID = 0;
         private static int GetNextID
         {
             get
