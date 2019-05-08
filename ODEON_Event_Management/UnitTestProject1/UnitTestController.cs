@@ -40,6 +40,10 @@ namespace UnitTestProject1
             control.IndskrivNavnOgDato(name, dates);
 
             Assert.AreEqual("Nyt Event", OErepo.GetItem(1).Navn);
+            for (int i = 0; i < dates.Count; i++)
+            {
+                Assert.AreEqual(dates[i], OErepo.GetItem(1).Afviklinger[i].Dato);
+            }
         }
  
     }
