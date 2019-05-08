@@ -78,7 +78,7 @@ namespace ODEON_Event_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(830, 473);
             this.Controls.Add(this.helloWorldLabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.debugInstructionsLabel);

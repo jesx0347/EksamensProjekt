@@ -30,6 +30,7 @@ namespace UnitTestProject1
         public void TestSalConstructor()
         {
             Assert.AreEqual("Store Sal", s1.Navn);
+            Assert.AreEqual(1, s1.ID);
         }
 
         [TestMethod]
