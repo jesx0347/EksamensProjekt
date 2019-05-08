@@ -8,34 +8,13 @@ using System.Collections;
 
 namespace ApplicationLayer
 {
-    public abstract class AbstractRepository<TContent, TSingleton> : IEnumerable where TContent : IHaveID where TSingleton : new()
+    public abstract class AbstractRepository<TContent> : IEnumerable where TContent : IHaveID
     {
         protected List<TContent> Items;
-        private static bool IsInstanceCreated = false;
-        private static TSingleton _instance;
-        public static TSingleton Instance 
-        {
-            get 
-            {
-                return _instance;
-            }
-        }
-
-        static AbstractRepository()
-        {
-            _instance = new TSingleton();
-        } 
 
         protected AbstractRepository()
         {
-            if (IsInstanceCreated)
-            {
-                throw new InvalidOperationException($"Constructing a {typeof(TSingleton).Name} manually is not allowed, use the Instance property.");
-            }
-            else
-            {
-                IsInstanceCreated = true;
-            }
+            Items = new List<TContent>();
         }
 
         public virtual void AddItem(TContent item)

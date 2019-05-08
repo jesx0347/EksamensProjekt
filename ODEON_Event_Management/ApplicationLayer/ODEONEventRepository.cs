@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationLayer
 {
-    public class ODEONEventRepository : AbstractRepository<ODEONEvent, ODEONEventRepository>
+    public class ODEONEventRepository : AbstractRepository<ODEONEvent>
     {
-        
         public ODEONEventRepository() : base() { }
         public ODEONEvent GetItem(string name)
         {
