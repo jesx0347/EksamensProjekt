@@ -82,7 +82,7 @@ namespace ApplicationLayer
                 command.Connection.Open();
                 SqlDataReader sqlDataReader = command.ExecuteReader();
                 sqlDataReader.Read();
-                afvikling.ID = sqlDataReader["DatoId"];
+                afvikling.ID = (int)sqlDataReader["DatoId"];
             }
         }
 
