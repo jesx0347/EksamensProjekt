@@ -65,10 +65,6 @@
       <Project>{f6efe005-f6d8-405f-9b15-7f211d7fd5f7}</Project>
       <Name>DomainLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ODEON_Event_Management\UILayer.csproj">
-      <Project>{b6b1d14e-adeb-445d-b4fe-46577f3f440a}</Project>
-      <Name>UILayer</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
