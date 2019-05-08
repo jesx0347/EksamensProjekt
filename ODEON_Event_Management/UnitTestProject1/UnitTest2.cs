@@ -18,12 +18,12 @@ namespace UnitTestProject1
         [TestInitialize]
         public void Init()
         {
-            repo = SalRepository.Instance;
+            repo = new SalRepository();
 
             s1 = new Sal("Store Sal", 1, (decimal)50000.00, 1740);
             s2 = new Sal("Sidescenen", 2, (decimal)37500.00, 600);
-            SalRepository.Instance.AddItem(s1);
-            SalRepository.Instance.AddItem(s2);
+            repo.AddItem(s1);
+            repo.AddItem(s2);
         }
 
         [TestMethod]

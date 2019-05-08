@@ -10,20 +10,20 @@ namespace UnitTestProject1
     public class UnitTest1
     {
 
-        [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
-        public void TestInharetedSingletonKategori()
-        {
-            KategoriRepository Repository = KategoriRepository.Instance;
-            Repository = new KategoriRepository();
-        }
+        //[TestMethod]
+        //[ExpectedException(typeof(InvalidOperationException))]
+        //public void TestInharetedSingletonKategori()
+        //{
+        //    KategoriRepository Repository = KategoriRepository.Instance;
+        //    Repository = new KategoriRepository();
+        //}
 
-        [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
-        public void TestInharetedSingletonSal()
-        {
-            SalRepository Repository = SalRepository.Instance;
-            Repository = new SalRepository();
-        }
+        //[TestMethod]
+        //[ExpectedException(typeof(InvalidOperationException))]
+        //public void TestInharetedSingletonSal()
+        //{
+        //    SalRepository Repository = SalRepository.Instance;
+        //    Repository = new SalRepository();
+        //}
     }
 }
