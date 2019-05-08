@@ -24,6 +24,33 @@ namespace ApplicationLayer
             sr.Close();
         }
 
+        public void UploadEvent(ODEONEvent upload)
+        {
+            spInsertEvent(upload);
+            foreach (Kategori item in upload.Kategorier)
+            {
+                spInsertEventKategori(upload, item);
+            }
+            foreach (Afvikling afvik in upload.Afviklinger)
+            {
+                spInsertAfvikling(upload, afvik);
+                foreach (BilletType billet in afvik.BilletTyper)
+                {
+                    spInsertBilletType(billet, afvik);
+                }
+            }
+        }
+
+        public void UploadEvent(string name)
+        {
+            UploadEvent(ODEONEventRepository.Instance.GetItem(name));
+        }
+
+        public void UploadEvent(int ID)
+        {
+            UploadEvent(ODEONEventRepository.Instance.GetItem(ID));
+        }
+
         private void spInsertEvent(ODEONEvent target)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
