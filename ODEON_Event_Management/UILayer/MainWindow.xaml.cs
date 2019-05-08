@@ -24,5 +24,45 @@ namespace UILayer
         {
             InitializeComponent();
         }
+
+        private void ButtonVisEvents_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ButtonPlanlægEvent_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonVisEvent_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ButtonLoadEvents_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonNæsteDag_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonTidligereDag_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
