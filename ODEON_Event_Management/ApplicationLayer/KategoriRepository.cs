@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationLayer
 {
-    public class KategoriRepository : AbstractRepository<Kategori, KategoriRepository>
+    public class KategoriRepository : AbstractRepository<Kategori>
     {
         public KategoriRepository() : base() { }
 

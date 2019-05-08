@@ -11,13 +11,30 @@ namespace ApplicationLayer
 {
     public class DataBaseController
     {
-        public static DataBaseController Instance { get; }
         private string ConnectionString;
-        static DataBaseController()
+
+        private readonly SalRepository SalRepo;
+        private readonly KategoriRepository KatRepo;
+        private readonly ODEONEventRepository OERepo;
+
+        public DataBaseController(SalRepository SR, KategoriRepository KR, ODEONEventRepository OER)
         {
-            Instance = new DataBaseController();
+            SalRepo = SR;
+            KatRepo = KR;
+            OERepo = OER;
+
+            LoadConnectionString();
         }
-        private DataBaseController()
+        public DataBaseController()
+        {
+            SalRepo = new SalRepository();
+            KatRepo = new KategoriRepository();
+            OERepo = new ODEONEventRepository();
+
+            LoadConnectionString();
+        }
+
+        private void LoadConnectionString()
         {
             StreamReader sr = new StreamReader("ConnectionString.txt");
             ConnectionString = sr.ReadLine();
@@ -43,12 +60,12 @@ namespace ApplicationLayer
 
         public void UploadEvent(string name)
         {
-            UploadEvent(ODEONEventRepository.Instance.GetItem(name));
+            UploadEvent(OERepo.GetItem(name));
         }
 
         public void UploadEvent(int ID)
         {
-            UploadEvent(ODEONEventRepository.Instance.GetItem(ID));
+            UploadEvent(OERepo.GetItem(ID));
         }
 
         private void spInsertEvent(ODEONEvent target)

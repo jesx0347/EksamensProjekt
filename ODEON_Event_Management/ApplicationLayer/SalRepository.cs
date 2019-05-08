@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationLayer
 {
-    public class SalRepository : AbstractRepository<Sal, SalRepository>
+    public class SalRepository : AbstractRepository<Sal>
     {
         public SalRepository() : base() { }
         public Sal GetSal(string name)
