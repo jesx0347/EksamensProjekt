@@ -53,7 +53,7 @@
     <Compile Include="Sal.cs" />
     <Compile Include="SalgsTal.cs" />
     <Compile Include="UnderskudsGodtgørelse.cs" />
-    <Compile Include="VariableIndtjening.cs" />
+    <Compile Include="VariableIndtægter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
