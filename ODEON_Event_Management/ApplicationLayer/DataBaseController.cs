@@ -122,50 +122,8 @@ namespace ApplicationLayer
                 command.Parameters.AddWithValue("@Udbud", billetType.Udbud);
                 command.Parameters.AddWithValue("@Pris", billetType.Pris);
                 command.Parameters.AddWithValue("@Afvikling", afvikling.ID);
-                command.Connection = connection;
-                command.Connection.Open();
-                command.ExecuteNonQuery();
             }
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                SqlCommand command = new SqlCommand();
-                command.CommandText = "EXECUTE spGetBilletTypeId @Pris, @Afvikling";
-                command.Parameters.AddWithValue("@Pris", billetType.Pris);
-                command.Parameters.AddWithValue("@Afvikling", afvikling.ID);
-                command.Connection.Open();
-                SqlDataReader sqlDataReader = command.ExecuteReader();
-                sqlDataReader.Read();
-                afvikling.ID = (int)sqlDataReader["PrisAfvikling"];
-            }
-        }
 
-        private void spSalgsTal(SalgsTal salgsTal, BilletType billetType)
-        {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                SqlCommand command = new SqlCommand();
-                command.CommandText = "EXECUTE spSalgsTal @Bevægelse, @BilletType, @SalgsDato";
-                command.Parameters.AddWithValue("@Bevægelse", salgsTal.Solgt);
-                command.Parameters.AddWithValue("@BilletType", billetType.ID);
-                command.Parameters.AddWithValue("@SalgsDato", salgsTal.Dato);
-                command.Connection = connection;
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-            }
         }
-
-        //private void spUnderskudsGodtgørelse(UnderskudsGodtgørelse UG)
-        //{
-        //    using (SqlConnection connection = new SqlConnection(ConnectionString))
-        //    {
-        //        SqlCommand command = new SqlCommand();
-        //        command.CommandText = "EXECUTE spUnderskudsGodtgørelse @ReturProcent, @UdløbsDato";
-        //        command.Parameters.AddWithValue("@ReturProcent", UG.Godtgørelse);
-        //        command.Parameters.AddWithValue("@UdløbsDato", UG.UdløbsDato);
-        //        command.Connection = connection;
-        //        command.Connection.Open();
-        //        command.ExecuteNonQuery();
-        //    }
-        //}
     }
 }
