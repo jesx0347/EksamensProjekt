@@ -8,7 +8,7 @@ namespace DomainLayer
 {
     public class ODEONEvent : IHaveID
     {
-        private static int _GetNextID;
+        private static int _GetNextID = 0;
         private static int GetNextID
         {
             get
@@ -21,7 +21,7 @@ namespace DomainLayer
         public string Navn;
         public int ID { get; }
         public Omkostninger Omkostninger;
-        public VariableIndtjening VariableIndtjening;
+        public VariableIndtægter VariableIndtjening;
         public List<Afvikling> Afviklinger = new List<Afvikling>();
         public List<Kategori> Kategorier = new List<Kategori>();
         public UnderskudsGodtgørelse Godtgørelse;

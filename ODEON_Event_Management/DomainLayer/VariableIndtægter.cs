@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DomainLayer
 {
-    public class VariableIndtjening
+    public class VariableIndtægter
     {
         public decimal Beløb;
         public string Note;

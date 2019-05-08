@@ -62,6 +62,7 @@ namespace ApplicationLayer
             {
                 Making.Afviklinger.Add(new Afvikling(item));
             }
+            OERepo.AddItem(Making);
             return Making.ID;
         }
 
@@ -96,7 +97,7 @@ namespace ApplicationLayer
             ODEONEvent ODEON = OERepo.GetItem(IDEvent);
             ODEON.Omkostninger.VariableOmkostninger = Omkost;
             ODEON.Omkostninger.Note = omkostNoter;
-            VariableIndtjening indtjening = new VariableIndtjening();
+            VariableIndtægter indtjening = new VariableIndtægter();
             indtjening.Beløb = Indtægt;
             indtjening.Note = indtægtNoter;
             ODEON.VariableIndtjening = indtjening;
