@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace UILayer
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Vis_Events.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Vis_Events : Page
     {
-        public MainWindow()
+        public Vis_Events()
         {
             InitializeComponent();
-        }
-
-        private void ButtonVisEvents_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void ButtonPlanlægEvent_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
