@@ -9,6 +9,24 @@
       Title="BilletType">
 
     <Grid>
-        
+        <Label x:Name="Label_Billet_Type" Content="Billet Type" HorizontalAlignment="Left" Margin="434,34,0,0" VerticalAlignment="Top"/>
+        <Grid Margin="321,80,191,318">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width ="*"/>
+                <ColumnDefinition Width ="*"/>
+                <ColumnDefinition Width ="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Navn" />
+            <Label Grid.Row="0" Grid.Column="1" Content="Udbud" />
+            <Label Grid.Row="0" Grid.Column="2" Content="Pris" />
+            <TextBox x:Name="TextBox_BT_Navn" Grid.Row="1" Grid.Column="0" Margin="3" Text="Indtast Navn..." FontStyle="Italic" />
+            <TextBox x:Name="TextBox_BT_Udbud" Grid.Row="1" Grid.Column="1" Margin="3" Text="Indtast mængde..." FontStyle="Italic" />
+            <TextBox x:Name="TextBox_BT_Pris" Grid.Row="1" Grid.Column="2" Margin="3" Text="Indtast beløb..." FontStyle="Italic" />
+        </Grid>
+
     </Grid>
 </Page>
