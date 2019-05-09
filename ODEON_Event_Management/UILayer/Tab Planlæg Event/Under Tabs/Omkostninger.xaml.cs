@@ -13,26 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UILayer
+namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Omkostninger.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Omkostninger : Page
     {
-        public MainWindow()
+        public Omkostninger()
         {
             InitializeComponent();
-        }
-
-        private void ButtonVisEvents_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void ButtonPlanlægEvent_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
