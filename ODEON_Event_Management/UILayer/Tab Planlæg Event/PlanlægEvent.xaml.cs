@@ -24,5 +24,15 @@ namespace UILayer
         {
             InitializeComponent();
         }
+
+        private void Tab_Button_BilletType_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tab_Button_Omkostninger_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

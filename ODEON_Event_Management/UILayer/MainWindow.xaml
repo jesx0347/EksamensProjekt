@@ -12,6 +12,11 @@
             <Button x:Name="Tab_Button_Planlæg_Event" Content="Planlæg Event" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="34" Click="ButtonPlanlægEvent_Click"/>
             <Button x:Name="Tab_Button_Vis_Enkelt_Event" Content="Vis Enkelt Event" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="33" Click="ButtonVisEvents_Click"/>
         </StackPanel>
+        <Label x:Name="Label_Billet_Type" Content="Billet Type" HorizontalAlignment="Left" Margin="434,34,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Navn" Content="Navn" HorizontalAlignment="Left" Margin="338,79,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Udbud" Content="Udbud" HorizontalAlignment="Left" Margin="434,79,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Pris" Content="Pris" HorizontalAlignment="Left" Margin="525,79,0,0" VerticalAlignment="Top"/>
+        <Grid HorizontalAlignment="Left" Height="50" Margin="309,105,0,0" VerticalAlignment="Top" Width="270"/>
 
     </Grid>
 </Window>

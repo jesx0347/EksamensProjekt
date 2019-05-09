@@ -24,5 +24,10 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         {
             InitializeComponent();
         }
+
+        private void CheckBox_Kategori_StandUp_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

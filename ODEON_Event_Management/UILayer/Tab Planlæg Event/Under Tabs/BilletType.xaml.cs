@@ -13,31 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UILayer
+namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 {
     /// <summary>
-    /// Interaction logic for Vis_Events.xaml
+    /// Interaction logic for BilletType.xaml
     /// </summary>
-    public partial class Vis_Events : Page
+    public partial class BilletType : Page
     {
-        public Vis_Events()
+        public BilletType()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
