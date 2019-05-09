@@ -78,5 +78,25 @@ namespace UnitTestProject1
         //    kats.Add(new Kategori(""))
 
         //}
+
+        [TestMethod]
+        public void TestIndskrivOmkostninger()
+        {
+            //int IDEvent, decimal marked, double KODA, decimal garantiSum, double split
+            List<DateTime> dates = new List<DateTime>();
+            dates.Add(new DateTime(2019, 5, 8));
+            dates.Add(new DateTime(2019, 5, 28));
+            dates.Add(new DateTime(2019, 6, 15));
+            dates.Add(new DateTime(2019, 6, 20));
+
+            string name = "Nyt Event";
+            control.IndskrivNavnOgDato(name, dates);
+
+            int IDEvent = OErepo.GetItem(1).ID;
+
+            control.IndskrivOmkostninger(IDEvent, (decimal)3400.00, 10, (decimal)3000.00, 70);
+
+            Assert.AreEqual((decimal)3400.00, OErepo.GetItem(1).Omkostninger.MarkedsFøring);
+        }
     }
 }
