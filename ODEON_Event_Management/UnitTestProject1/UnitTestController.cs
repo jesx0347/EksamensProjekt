@@ -61,7 +61,7 @@ namespace UnitTestProject1
 
             List<Sal> sale = new List<Sal>();
             sale.Add(new Sal("Store Sal", 1, (decimal)50000.00, 1740));
-            Salrepo.AddItem(sale);
+            //Salrepo.AddItem(sale);
 
             int IDEvent = OErepo.GetItem(1).ID;
             string SalNavn = "Store Sal";
@@ -97,6 +97,9 @@ namespace UnitTestProject1
             control.IndskrivOmkostninger(IDEvent, (decimal)3400.00, 10, (decimal)3000.00, 70);
 
             Assert.AreEqual((decimal)3400.00, OErepo.GetItem(1).Omkostninger.MarkedsFøring);
+            Assert.AreEqual(10, OErepo.GetItem(1).Omkostninger.KODA);
+            Assert.AreEqual((decimal)3000.00, OErepo.GetItem(1).Omkostninger.Garantisum);
+            Assert.AreEqual(70, OErepo.GetItem(1).Omkostninger.ArtistSplit);
         }
     }
 }
