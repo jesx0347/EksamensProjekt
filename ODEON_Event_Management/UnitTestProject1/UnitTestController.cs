@@ -68,7 +68,13 @@ namespace UnitTestProject1
 
             control.IndskrivSal(IDEvent, SalNavn);
 
-            Assert.AreEqual("Store Sal", Salrepo.GetItem(1).Navn);
+            for (int i = 0; i < dates.Count; i++)
+            {
+                Assert.AreEqual("Store Sal", OErepo.GetItem(1).Afviklinger[i].Sal);
+            }
+
+            //Assert.AreEqual("store Sal", OErepo.GetItem(1).Afviklinger);
+            //Assert.AreEqual(OErepo.GetItem(1).Navn, "Ny Event");
         }
 
         //[TestMethod]
