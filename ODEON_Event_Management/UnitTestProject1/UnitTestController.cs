@@ -16,6 +16,10 @@ namespace UnitTestProject1
         KategoriRepository Katrepo;
         Controller control;
 
+        List<DateTime> dates = new List<DateTime>();
+        string name = "Nyt Event";
+        //int IDEvent;
+
         [TestInitialize]
         public void Init()
         {
@@ -23,105 +27,111 @@ namespace UnitTestProject1
             Salrepo = new SalRepository();
             Katrepo = new KategoriRepository();
             control = new Controller(Salrepo, Katrepo, OErepo);
+
+            dates.Add(new DateTime(2019, 5, 8));
+            dates.Add(new DateTime(2019, 5, 28));
+            dates.Add(new DateTime(2019, 6, 15));
+            dates.Add(new DateTime(2019, 6, 20));
+
+            //int IDEvent = control.IndskrivNavnOgDato(name, dates);
         }
 
         [TestMethod]
         public void TestIndskrivNavnOgDato()
         {
-            List<DateTime> dates = new List<DateTime>();
-            dates.Add(new DateTime(2019, 5, 8));
-            dates.Add(new DateTime(2019, 5, 28));
-            dates.Add(new DateTime(2019, 6, 15));
-            dates.Add(new DateTime(2019, 6, 20));
+            int IDEvent = control.IndskrivNavnOgDato(name, dates);
 
-            string name = "Nyt Event";
-            control.IndskrivNavnOgDato(name, dates);
-
-            Assert.AreEqual("Nyt Event", OErepo.GetItem(1).Navn);
+            Assert.AreEqual("Nyt Event", OErepo.GetItem(IDEvent).Navn);
             for (int i = 0; i < dates.Count; i++)
             {
-                Assert.AreEqual(dates[i], OErepo.GetItem(1).Afviklinger[i].Dato);
+                Assert.AreEqual(dates[i], OErepo.GetItem(IDEvent).Afviklinger[i].Dato);
             }
         }
 
         [TestMethod]
-        public void TestIndskrivSal()
+        public void TestVælgSal()
         {
-            List<DateTime> dates = new List<DateTime>();
-            dates.Add(new DateTime(2019, 5, 8));
-            dates.Add(new DateTime(2019, 5, 28));
-            dates.Add(new DateTime(2019, 6, 15));
-            dates.Add(new DateTime(2019, 6, 20));
-
-            string name = "Nyt Event";
-            control.IndskrivNavnOgDato(name, dates);
-
             //List<ODEONEvent> events = new List<ODEONEvent>();
             //events.Add(new ODEONEvent("Nytårsfest", 1));
 
-            List<Sal> sale = new List<Sal>();
-            sale.Add(new Sal("Store Sal", 1, (decimal)50000.00, 1740));
-            //Salrepo.AddItem(sale);
+            //List<Sal> sale = new List<Sal>();
+            //sale.Add(new Sal("Store Sal", 1, (decimal)50000.00, 1740));
+            int IDEvent = control.IndskrivNavnOgDato(name, dates);
 
-            int IDEvent = OErepo.GetItem(1).ID;
-            string SalNavn = Salrepo.GetSal.;
+            Salrepo.AddItem(new Sal("Store Sal", 1, (decimal)50000.00, 1740));
 
-            control.IndskrivSal(IDEvent, SalNavn);
+            string SalNavn = Salrepo.GetItem("Store Sal").ToString();
+
+            control.VælgSal(IDEvent, SalNavn);
 
             for (int i = 0; i < dates.Count; i++)
             {
-                Assert.AreEqual("Store Sal", OErepo.GetItem(1).Afviklinger[i].Sal);
+                Assert.AreEqual("Store Sal", OErepo.GetItem(IDEvent).Afviklinger[i].Sal.ToString());
             }
         }
 
-        //[TestMethod]
-        //public void TestIndskrivKategori()
-        //{
-        //    List<Kategori> kats = new List<Kategori>();
-        //    kats.Add(new Kategori(""))
+        [TestMethod]
+        public void TestVælgKategori()
+        {
+            int IDEvent = control.IndskrivNavnOgDato(name, dates);
 
-        //}
+            Katrepo.AddItem(new Kategori("Rock", 1));
+            Katrepo.AddItem(new Kategori("Gastronomi", 2));
+            Katrepo.AddItem(new Kategori("Jazz", 3));
+
+            List<string> kats = new List<string>();
+            kats.Add("Rock");
+
+            control.VælgKategori(IDEvent, kats);
+
+            for (int i = 0; i < kats.Count; i++)
+            {
+                Assert.AreEqual(kats[i], OErepo.GetItem(IDEvent).Kategorier[i].Navn);
+            }
+
+        }
 
         [TestMethod]
         public void TestIndskrivOmkostninger()
         {
-            List<DateTime> dates = new List<DateTime>();
-            dates.Add(new DateTime(2019, 5, 8));
-            dates.Add(new DateTime(2019, 5, 28));
-            dates.Add(new DateTime(2019, 6, 15));
-            dates.Add(new DateTime(2019, 6, 20));
-
-            string name = "Nyt Event";
-            control.IndskrivNavnOgDato(name, dates);
-
-            int IDEvent = OErepo.GetItem(1).ID;
+            int IDEvent = control.IndskrivNavnOgDato(name, dates);
 
             control.IndskrivOmkostninger(IDEvent, (decimal)3400.00, 10, (decimal)3000.00, 70);
 
-            Assert.AreEqual((decimal)3400.00, OErepo.GetItem(1).Omkostninger.MarkedsFøring);
-            Assert.AreEqual(10, OErepo.GetItem(1).Omkostninger.KODA);
-            Assert.AreEqual((decimal)3000.00, OErepo.GetItem(1).Omkostninger.Garantisum);
-            Assert.AreEqual(70, OErepo.GetItem(1).Omkostninger.ArtistSplit);
+            Assert.AreEqual((decimal)3400.00, OErepo.GetItem(IDEvent).Omkostninger.MarkedsFøring);
+            Assert.AreEqual(10, OErepo.GetItem(IDEvent).Omkostninger.KODA);
+            Assert.AreEqual((decimal)3000.00, OErepo.GetItem(IDEvent).Omkostninger.Garantisum);
+            Assert.AreEqual(70, OErepo.GetItem(IDEvent).Omkostninger.ArtistSplit);
         }
 
-        //(int IDEvent, decimal Omkost, decimal Indtægt, string omkostNoter, string indtægtNoter)
         [TestMethod]
         public void TestIndskrivVariable()
         {
-            List<DateTime> dates = new List<DateTime>();
-            dates.Add(new DateTime(2019, 5, 8));
-            dates.Add(new DateTime(2019, 5, 28));
-            dates.Add(new DateTime(2019, 6, 15));
-            dates.Add(new DateTime(2019, 6, 20));
+            int IDEvent = control.IndskrivNavnOgDato(name, dates);
 
-            string name = "Nyt Event";
-            control.IndskrivNavnOgDato(name, dates);
-
-            int IDEvent = OErepo.GetItem(1).ID;
+            control.IndskrivOmkostninger(IDEvent, (decimal)3400.00, 10, (decimal)3000.00, 70);
 
             control.IndskrivVariable(IDEvent, (decimal)340.00, (decimal)300, "Extra lys: 340kr", "Dækning af lyst: 300kr");
 
-            Assert.AreEqual((decimal)340.00, OErepo.GetItem(1).VariableIndtjening.Beløb);
+            Assert.AreEqual((decimal)340.00, OErepo.GetItem(IDEvent).Omkostninger.VariableOmkostninger);
+        }
+
+        [TestMethod]
+        public void TestIndskrivBilletTyper()
+        {
+            int IDEvent = control.IndskrivNavnOgDato(name, dates);
+
+            List<Tuple<int, decimal>> type = new List<Tuple<int, decimal>>();
+            type.Add(new Tuple<int, decimal>(500, (decimal)200));
+
+            control.IndskrivBilletTyper(IDEvent, type);
+
+            for (int i = 0; i < type.Count; i++)
+            {
+                Assert.AreEqual(type[i].Item1, OErepo.GetItem(IDEvent).Afviklinger[i].BilletTyper[i].Udbud);
+                Assert.AreEqual(type[i].Item2, OErepo.GetItem(IDEvent).Afviklinger[i].BilletTyper[i].Pris);
+
+            }
         }
     }
 }
