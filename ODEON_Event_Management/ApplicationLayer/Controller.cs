@@ -66,17 +66,17 @@ namespace ApplicationLayer
             return Making.ID;
         }
 
-        public void IndskrivSal(int IDEvent, string SalNavn)
+        public void VælgSal(int IDEvent, string SalNavn)
         {
             ODEONEvent ODEON = OERepo.GetItem(IDEvent);
-            Sal sal = SalRepo.GetSal(SalNavn);
+            Sal sal = SalRepo.GetItem(SalNavn);
             foreach (Afvikling item in ODEON.Afviklinger)
             {
                 item.Sal = sal;
             }
         }
 
-        public void IndskrivKategori(int IDEvent, IEnumerable<string> Kats)
+        public void VælgKategori(int IDEvent, IEnumerable<string> Kats)
         {
             ODEONEvent ODEON = OERepo.GetItem(IDEvent);
             foreach (string item in Kats)
