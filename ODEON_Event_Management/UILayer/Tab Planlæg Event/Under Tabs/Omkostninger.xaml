@@ -9,14 +9,14 @@
       Title="Omkostninger">
 
     <Grid>
-        <Label x:Name="Label_Markedsføringskost" Content="Indtast Markedsføringskost" HorizontalAlignment="Left" Margin="240,50,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_Garantisum" Content="Garantisum" HorizontalAlignment="Left" Margin="318,210,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_KODA" Content="Indtast KODA" HorizontalAlignment="Left" Margin="308,128,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_ArtistSplit" Content="ArtistSplit" HorizontalAlignment="Left" Margin="328,285,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBox_Markedsføringskost" HorizontalAlignment="Left" Height="23" Margin="394,54,0,0" TextWrapping="Wrap" Text="Indtast beløb..." VerticalAlignment="Top" Width="120" FontStyle="Italic"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="394,131,0,0" TextWrapping="Wrap" Text="Indtast mængde..." VerticalAlignment="Top" Width="120" FontStyle="Italic"/>
-        <TextBox x:Name="TextBox_Garantisum" HorizontalAlignment="Left" Height="23" Margin="394,214,0,0" TextWrapping="Wrap" Text="Indtast beløb..." VerticalAlignment="Top" Width="120" FontStyle="Italic"/>
-        <TextBox x:Name="TextBox_ArtistSplit" HorizontalAlignment="Left" Height="23" Margin="394,289,0,0" TextWrapping="Wrap" Text="Indtast mængde..." VerticalAlignment="Top" Width="120" FontStyle="Italic"/>
+        <Label x:Name="Label_Markedsføringskost" Content="Indtast Markedsføringskost" HorizontalAlignment="Left" Margin="63,27,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Garantisum" Content="Garantisum" HorizontalAlignment="Left" Margin="141,187,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_KODA" Content="Indtast KODA" HorizontalAlignment="Left" Margin="131,105,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_ArtistSplit" Content="ArtistSplit" HorizontalAlignment="Left" Margin="151,262,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_Markedsføringskost" HorizontalAlignment="Left" Height="23" Margin="217,31,0,0" TextWrapping="Wrap" Text="Indtast beløb..." VerticalAlignment="Top" Width="120" FontStyle="Italic"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="217,108,0,0" TextWrapping="Wrap" Text="Indtast mængde..." VerticalAlignment="Top" Width="120" FontStyle="Italic"/>
+        <TextBox x:Name="TextBox_Garantisum" HorizontalAlignment="Left" Height="23" Margin="217,191,0,0" TextWrapping="Wrap" Text="Indtast beløb..." VerticalAlignment="Top" Width="120" FontStyle="Italic"/>
+        <TextBox x:Name="TextBox_ArtistSplit" HorizontalAlignment="Left" Height="23" Margin="217,266,0,0" TextWrapping="Wrap" Text="Indtast mængde..." VerticalAlignment="Top" Width="120" FontStyle="Italic"/>
 
     </Grid>
 </Page>

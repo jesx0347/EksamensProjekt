@@ -9,8 +9,10 @@
       Title="Sal">
 
     <Grid>
-        <Label x:Name="Label_Vælg_Sal" Content="Vælg Sal" HorizontalAlignment="Left" Margin="310,80,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="ComboBox_VælgSal" HorizontalAlignment="Left" Margin="370,80,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
+        <Label x:Name="Label_Vælg_Sal" Content="Vælg Sal" HorizontalAlignment="Left" Margin="132,62,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ComboBox_VælgSal" HorizontalAlignment="Left" Margin="192,62,0,0" VerticalAlignment="Top" Width="120" Height="26" SelectionChanged="ComboBox_VælgSal_SelectionChanged"/>
+        <Button x:Name="Button_Sal_Tilbage" Content="Button" HorizontalAlignment="Left" Margin="405,389,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="494,389,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Page>
