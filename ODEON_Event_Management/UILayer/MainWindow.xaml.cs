@@ -21,7 +21,7 @@ namespace UILayer
     /// </summary>
     public partial class MainWindow : Window
     {
-        Controller control = new Controller();
+        internal static Controller control = new Controller();
         public MainWindow()
         {
             InitializeComponent();
