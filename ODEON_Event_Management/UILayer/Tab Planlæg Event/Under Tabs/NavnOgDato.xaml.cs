@@ -88,7 +88,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
             TextBox box = sender as TextBox;
             if (box.Text.Trim().Equals(string.Empty))
             {
-                box.Text = "Search...";
+                box.Text = "Indtast Navn...";
                 box.Foreground = Brushes.LightGray;
                 box.GotFocus += TextBox_EventNavn_GotFocus;
             }
