@@ -24,5 +24,10 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         {
             InitializeComponent();
         }
+
+        private void TextBox_EventNavn_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

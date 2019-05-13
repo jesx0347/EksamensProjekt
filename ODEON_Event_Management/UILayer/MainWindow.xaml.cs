@@ -34,5 +34,10 @@ namespace UILayer
         {
 
         }
+
+        private void ButtonVisEnkeltEvent_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
