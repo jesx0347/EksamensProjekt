@@ -20,6 +20,8 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
     /// </summary>
     public partial class NavnOgDato : Page
     {
+        string eventNavn;
+        List<DateTime> dates = new List<DateTime>();
         public NavnOgDato()
         {
             InitializeComponent();
@@ -27,7 +29,13 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 
         private void TextBox_EventNavn_TextChanged(object sender, TextChangedEventArgs e)
         {
+            eventNavn = TextBox_EventNavn.Text;
+            //MainWindow.control.IndskrivNavnOgDato(TextBox_EventNavn)
+        }
 
+        private void Button_Tilføj_Flere_Datoer_Click(object sender, RoutedEventArgs e)
+        {
+            //dates.Add();
         }
     }
 }
