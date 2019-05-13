@@ -37,5 +37,10 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         {
             //dates.Add();
         }
+
+        private void Kalender_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TextBox_Datoer.Text = Kalender.SelectedDate.ToString();
+        }
     }
 }
