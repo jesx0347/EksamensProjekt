@@ -14,11 +14,11 @@
         </StackPanel>
         <Frame x:Name="MainFrame" Content="" HorizontalAlignment="Left" Height="419" Margin="200,0,0,0" VerticalAlignment="Top" Width="592" NavigationUIVisibility="Hidden"/>
         <StackPanel x:Name="spl_PlanlægEvents" HorizontalAlignment="Left" Height="419" Margin="100,0,0,0" VerticalAlignment="Top" Width="100" Background="Gray" Visibility="Hidden">
-            <Button x:Name="Tab_Button_Navn_Og_Dato" Content="Navn og Dato" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="34"/>
-            <Button x:Name="Tab_Button_Sal" Content="Sal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="34"/>
-            <Button x:Name="Tab_Button_Kategori" Content="Kategori" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="34"/>
+            <Button x:Name="Tab_Button_Navn_Og_Dato" Content="Navn og Dato" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="34" Click="Tab_Button_Navn_Og_Dato_Click"/>
+            <Button x:Name="Tab_Button_Sal" Content="Sal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="34" Click="Tab_Button_Sal_Click"/>
+            <Button x:Name="Tab_Button_Kategori" Content="Kategori" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="34" Click="Tab_Button_Kategori_Click"/>
             <Button x:Name="Tab_Button_Omkostninger" Content="Omkostninger" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="34" Click="Tab_Button_Omkostninger_Click"/>
-            <Button x:Name="Tab_Button_Økonomi" Content="Økonomi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="34"/>
+            <Button x:Name="Tab_Button_Økonomi" Content="Økonomi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="34" Click="Tab_Button_Økonomi_Click"/>
             <Button x:Name="Tab_Button_BilletType" Content="Billet Type" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="34" Click="Tab_Button_BilletType_Click"/>
         </StackPanel>
     </Grid>
