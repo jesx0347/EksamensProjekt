@@ -12,12 +12,12 @@ namespace DomainLayer
         public int ID { get; set; }
         public decimal Leje { get; set; }
         public int Kapacitet { get; set; }
-        public Sal(string name, int id, decimal cost, int capaceti)
+        public Sal(string name, int id, decimal cost, int capacity)
         {
             Navn = name;
             ID = id;
             Leje = cost;
-            Kapacitet = capaceti;
+            Kapacitet = capacity;
         }
         public override string ToString()
         {
