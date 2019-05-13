@@ -23,7 +23,7 @@ namespace ApplicationLayer
             KatRepo = KR;
             OERepo = OER;
 
-            LoadConnectionString();
+            //LoadConnectionString();
         }
         public DataBaseController()
         {

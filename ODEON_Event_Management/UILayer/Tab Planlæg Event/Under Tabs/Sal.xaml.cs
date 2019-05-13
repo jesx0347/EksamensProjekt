@@ -24,10 +24,16 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         public Sal()
         {
             InitializeComponent();
+            ComboBox_VælgSal.ItemsSource = Controller.Singleton.GetSalNavne();
         }
 
         private void ComboBox_VælgSal_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            
+            //foreach (string Sale in Controller.Singleton.GetSalNavne())
+            //{
+            //    ComboBox_VælgSal.Items.Add(Sale);
+            //}
             
         }
     }
