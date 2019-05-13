@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ApplicationLayer;
 
 namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 {
@@ -23,6 +24,11 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         public Sal()
         {
             InitializeComponent();
+        }
+
+        private void ComboBox_VælgSal_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }
