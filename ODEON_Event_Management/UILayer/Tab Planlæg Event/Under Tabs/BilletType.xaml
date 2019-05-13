@@ -9,8 +9,8 @@
       Title="BilletType">
 
     <Grid>
-        <Label x:Name="Label_Billet_Type" Content="Billet Type" HorizontalAlignment="Left" Margin="434,34,0,0" VerticalAlignment="Top"/>
-        <Grid Margin="321,80,191,318">
+        <Label x:Name="Label_Billet_Type" Content="Billet Type" HorizontalAlignment="Left" Margin="63,21,0,0" VerticalAlignment="Top"/>
+        <Grid Margin="171,87,341,311">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
