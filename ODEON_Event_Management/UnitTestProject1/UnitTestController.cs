@@ -81,6 +81,8 @@ namespace UnitTestProject1
 
             List<string> kats = new List<string>();
             kats.Add("Rock");
+            kats.Add("Gastronomi");
+            kats.Add("Jazz");
 
             control.VælgKategori(IDEvent, kats);
 
