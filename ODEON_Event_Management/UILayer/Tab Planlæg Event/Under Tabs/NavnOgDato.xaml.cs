@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,12 +36,39 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 
         private void Button_Tilføj_Flere_Datoer_Click(object sender, RoutedEventArgs e)
         {
-            //dates.Add(); bla bla
+            //new Thread(() => 
+            {
+                DateTime date = (DateTime)Kalender.SelectedDate;
+                if (dates.Contains(date))
+                {
+                    dates.Remove(date);
+                }
+                else
+                {
+                    dates.Add(date);
+                }
+            }//).Start();
         }
 
         private void Kalender_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            TextBox_Datoer.Text = Kalender.SelectedDate.ToString();
+
+        }
+
+        private void ListView_Datoer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ListView_Datoer_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+            new Thread(() =>
+            {
+                foreach (DateTime item in dates)
+                {
+                    ListView_Datoer.Items.Add(item);
+                }
+            }).Start();
         }
     }
 }
