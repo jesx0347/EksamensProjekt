@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ApplicationLayer;
 
 namespace UILayer
 {
@@ -20,6 +21,7 @@ namespace UILayer
     /// </summary>
     public partial class MainWindow : Window
     {
+        Controller control = new Controller();
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +29,7 @@ namespace UILayer
 
         private void ButtonVisEvents_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void ButtonPlanlægEvent_Click(object sender, RoutedEventArgs e)
