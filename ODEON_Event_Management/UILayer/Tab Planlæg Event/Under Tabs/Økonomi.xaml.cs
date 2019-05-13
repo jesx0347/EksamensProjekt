@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         public Økonomi()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_VO_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            new Thread(() =>
+            {
+                
+            }).Start();
         }
     }
 }

@@ -36,7 +36,7 @@ namespace ApplicationLayer
 
         private void LoadConnectionString()
         {
-            StreamReader sr = new StreamReader("ConnectionString.txt");
+            StreamReader sr = new StreamReader("../../ConnectionString.txt");
             ConnectionString = sr.ReadLine();
             sr.Close();
         }

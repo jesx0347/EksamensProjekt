@@ -15,7 +15,7 @@
         <Label x:Name="Label_VI_Note" Content="Note" HorizontalAlignment="Left" Margin="298,208,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="341,56,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="TextBox_VO_Note" HorizontalAlignment="Left" Height="87" Margin="341,87,0,0" TextWrapping="Wrap" Text="Indskriv noter..." VerticalAlignment="Top" Width="345" FontStyle="Italic"/>
-        <TextBox x:Name="TextBox_VO" HorizontalAlignment="Left" Height="23" Margin="341,56,0,0" TextWrapping="Wrap" Text="Indtast beløb..." VerticalAlignment="Top" Width="176" FontStyle="Italic"/>
+        <TextBox x:Name="TextBox_VO" HorizontalAlignment="Left" Height="23" Margin="341,56,0,0" TextWrapping="Wrap" Text="Indtast beløb..." VerticalAlignment="Top" Width="176" FontStyle="Italic" TextChanged="TextBox_VO_TextChanged"/>
         <TextBox x:Name="TextBox_VariableIndtægter" HorizontalAlignment="Left" Height="23" Margin="341,181,0,0" TextWrapping="Wrap" Text="Indtast beløb" VerticalAlignment="Top" Width="176" FontStyle="Italic"/>
         <TextBox x:Name="TextBox_VI_Note" HorizontalAlignment="Left" Height="87" Margin="341,212,0,0" TextWrapping="Wrap" Text="Indskriv noter..." VerticalAlignment="Top" Width="345" FontStyle="Italic"/>
 
