@@ -12,6 +12,7 @@ namespace ApplicationLayer
     {
         private DataBaseController DataBase;
         public DataBaseController DBC { get => DataBase; }
+        private static Controller _singleton;
         public static Controller Singleton { get; }
 
         private readonly SalRepository SalRepo;
@@ -20,7 +21,7 @@ namespace ApplicationLayer
 
         static Controller()
         {
-            Singleton = new Controller();
+            _singleton = new Controller();
         }
         private Controller()
         {
@@ -31,14 +32,16 @@ namespace ApplicationLayer
             DataBase = new DataBaseController(SalRepo, KatRepo, OERepo);
         }
 
-        //public Controller(SalRepository SR, KategoriRepository KR, ODEONEventRepository OER)
-        //{
-        //    SalRepo = SR;
-        //    KatRepo = KR;
-        //    OERepo = OER;
+        public Controller(SalRepository SR, KategoriRepository KR, ODEONEventRepository OER)
+        {
+            SalRepo = SR;
+            KatRepo = KR;
+            OERepo = OER;
 
-        //    DataBase = new DataBaseController(SalRepo, KatRepo, OERepo);
-        //}
+            DataBase = new DataBaseController(SalRepo, KatRepo, OERepo);
+
+            _singleton = this;
+        }
 
         public IEnumerable<string> GetSalNavne()
         {
