@@ -35,7 +35,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 
         private void Button_Tilføj_Flere_Datoer_Click(object sender, RoutedEventArgs e)
         {
-            //dates.Add();
+            //dates.Add(); bla bla
         }
 
         private void Kalender_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
