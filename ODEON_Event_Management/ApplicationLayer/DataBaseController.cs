@@ -41,6 +41,74 @@ namespace ApplicationLayer
             sr.Close();
         }
 
+        public void StartUp()
+        {
+            DownloadEventListe();
+            DownloadKategorier();
+            DownloadSale();
+        }
+
+        private void DownloadEventListe()
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "EXECUTE [spListOfEvents]";
+                command.Connection = connection;
+                command.Connection.Open();
+                SqlDataReader sqlDataReader = command.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    int id = (int)sqlDataReader["[EventId]"];
+                    string navn = (string)sqlDataReader["[EventNavn]"];
+                    ODEONEvent OE = new ODEONEvent(navn, id);
+                    OERepo.AddItem(OE);
+                }
+
+            }
+        }
+
+        private void DownloadKategorier()
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "EXECUTE [spListOfKategorier]";
+                command.Connection = connection;
+                command.Connection.Open();
+                SqlDataReader sqlDataReader = command.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    int id = (int)sqlDataReader["[KategoriId]"];
+                    string navn = (string)sqlDataReader["[KategoriNavn]"];
+                    Kategori kat = new Kategori(navn, id);
+                    KatRepo.AddItem(kat);
+                }
+            }
+        }
+
+        private void DownloadSale()
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "EXECUTE [spListOfSale]";
+                command.Connection = connection;
+                command.Connection.Open();
+                SqlDataReader sqlDataReader = command.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    int id = (int)sqlDataReader["[SalId]"];
+                    string navn = (string)sqlDataReader["[SalNavn]"];
+                    decimal leje = (decimal)sqlDataReader["[Leje]"];
+                    int cap = (int)sqlDataReader["[Kapacitet]"];
+                    Sal sal = new Sal(navn, id, leje, cap);
+                    SalRepo.AddItem(sal);
+                }
+            }
+
+        }
+
         public void UploadEvent(ODEONEvent upload)
         {
             spInsertEvent(upload);
