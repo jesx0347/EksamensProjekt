@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ApplicationLayer;
 
 
 namespace UILayer
@@ -21,6 +22,7 @@ namespace UILayer
     /// </summary>
     public partial class MainWindow : Window
     {
+        //internal static Controller control = new Controller();
         private Vis_Events vis_Events = new Vis_Events();
         public MainWindow()
         {
