@@ -22,7 +22,7 @@ namespace UILayer
     /// </summary>
     public partial class MainWindow : Window
     {
-        internal static Controller control = new Controller();
+        //internal static Controller control = new Controller();
         private Vis_Events vis_Events = new Vis_Events();
         public MainWindow()
         {
