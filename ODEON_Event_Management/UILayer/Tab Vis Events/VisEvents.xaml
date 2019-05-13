@@ -5,16 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UILayer"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="409" d:DesignWidth="592"
       Title="Vis_Events">
 
     <Grid>
-        <TextBox x:Name="Tab_VE_TextBox" HorizontalAlignment="Left" Height="23" Margin="156,17,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="Tab_VE_TextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Seach..." VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
         <DatePicker x:Name="Tab_VE_DatePicker" HorizontalAlignment="Left" Margin="649,16,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="Tab_VE_DataGrid" AutoGenerateColumns="True" HorizontalAlignment="Left" Height="284" Margin="156,66,0,0" VerticalAlignment="Top" Width="595" SelectionChanged="DataGrid_SelectionChanged"/>
-        <Button x:Name="Tab_VE_Button_Load_Events_Table" Content="Load Events" HorizontalAlignment="Left" Margin="489,382,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button x:Name="Tab_VE_Button_Tidligere_Dag" Content="Tidligere Dag" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="581,382,0,0" Click="Button_Click"/>
-        <Button x:Name="Tab_VE_Button_Næste_Dag" Content="Næste Dag" HorizontalAlignment="Left" Margin="676,382,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <DataGrid x:Name="Tab_VE_DataGrid" AutoGenerateColumns="True" HorizontalAlignment="Left" Height="284" Margin="0,69,0,0" VerticalAlignment="Top" Width="582" SelectionChanged="DataGrid_SelectionChanged"/>
+        <Button x:Name="Tab_VE_Button_Load_Events_Table" Content="Load Events" HorizontalAlignment="Left" Margin="347,379,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button x:Name="Tab_VE_Button_Tidligere_Dag" Content="Tidligere Dag" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="427,379,0,0" Click="Button_Click"/>
+        <Button x:Name="Tab_VE_Button_Næste_Dag" Content="Næste Dag" HorizontalAlignment="Left" Margin="507,379,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
     </Grid>
 </Page>

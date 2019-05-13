@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace UILayer
 {
     /// <summary>
@@ -20,6 +21,7 @@ namespace UILayer
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Vis_Events vis_Events = new Vis_Events();
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +29,7 @@ namespace UILayer
 
         private void ButtonVisEvents_Click(object sender, RoutedEventArgs e)
         {
-            
+            MainFrame.Content = vis_Events;
         }
 
         private void ButtonPlanlægEvent_Click(object sender, RoutedEventArgs e)
@@ -36,6 +38,16 @@ namespace UILayer
         }
 
         private void ButtonVisEnkeltEvent_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tab_Button_Omkostninger_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tab_Button_BilletType_Click(object sender, RoutedEventArgs e)
         {
 
         }
