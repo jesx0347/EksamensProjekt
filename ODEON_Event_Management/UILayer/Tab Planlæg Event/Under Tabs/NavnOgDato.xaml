@@ -14,13 +14,7 @@
         <Label x:Name="Label_Vælg_Dato" Content="Vælg afviklingsdato" HorizontalAlignment="Left" Margin="114,159,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="Kalender" HorizontalAlignment="Left" Margin="232,161,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="Button_Tilføj_Flere_Datoer" Content="Tilføj flere datoer" HorizontalAlignment="Left" Margin="385,163,0,0" VerticalAlignment="Top" Width="100" Click="Button_Tilføj_Flere_Datoer_Click"/>
-        <ListView x:Name="ListView_Datoer" HorizontalAlignment="Left" Height="100" Margin="232,223,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="ListView_Datoer_SelectionChanged" SourceUpdated="ListView_Datoer_SourceUpdated">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <TextBox x:Name="TextBox_Datoer" HorizontalAlignment="Left" Height="114" Margin="232,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="" FontStyle="Normal" IsReadOnly="True"/>
 
     </Grid>
 </Page>

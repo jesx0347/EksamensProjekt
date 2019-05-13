@@ -46,29 +46,28 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
                 else
                 {
                     dates.Add(date);
+                    dates.Sort();
                 }
+                TextBox_Datoer.Clear();
+                StringBuilder sb = new StringBuilder();
+                foreach (DateTime item in dates)
+                {
+                    sb.AppendLine(item.ToString());
+                }
+                TextBox_Datoer.Text = sb.ToString();
+                //ListView_Datoer.
             }//).Start();
         }
 
-        private void Kalender_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void ListView_Datoer_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void ListView_Datoer_SourceUpdated(object sender, DataTransferEventArgs e)
-        {
-            new Thread(() =>
-            {
-                foreach (DateTime item in dates)
-                {
-                    ListView_Datoer.Items.Add(item);
-                }
-            }).Start();
-        }
+        //private void ListView_Datoer_SourceUpdated(object sender, DataTransferEventArgs e)
+        //{
+        //    new Thread(() =>
+        //    {
+        //        foreach (DateTime item in dates)
+        //        {
+        //            ListView_Datoer.Items.Add(item);
+        //        }
+        //    }).Start();
+        //}
     }
 }
