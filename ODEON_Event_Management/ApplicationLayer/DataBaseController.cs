@@ -23,7 +23,7 @@ namespace ApplicationLayer
             KatRepo = KR;
             OERepo = OER;
 
-            //LoadConnectionString();
+            LoadConnectionString();
         }
         public DataBaseController()
         {
@@ -36,7 +36,7 @@ namespace ApplicationLayer
 
         private void LoadConnectionString()
         {
-            StreamReader sr = new StreamReader("../../ConnectionString.txt");
+            StreamReader sr = new StreamReader("../../../ApplicationLayer/ConnectionString.txt");
             ConnectionString = sr.ReadLine();
             sr.Close();
         }
