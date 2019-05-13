@@ -59,6 +59,11 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
             }//).Start();
         }
 
+        private void Button_NavnOgDato_Næste_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         //private void ListView_Datoer_SourceUpdated(object sender, DataTransferEventArgs e)
         //{
         //    new Thread(() =>
