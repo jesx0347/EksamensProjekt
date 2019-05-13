@@ -31,6 +31,8 @@ namespace ApplicationLayer
             SalRepo = SR;
             KatRepo = KR;
             OERepo = OER;
+
+            DataBase = new DataBaseController(SalRepo, KatRepo, OERepo);
         }
 
         public IEnumerable<string> GetSalNavne()
@@ -113,6 +115,11 @@ namespace ApplicationLayer
                     afvikling.BilletTyper.Add(new BilletType(tuple.Item1, tuple.Item2));
                 }
             }
+        }
+
+        public void UploadEvent(int ID)
+        {
+            DataBase.UploadEvent(OERepo.GetItem(ID));
         }
     }
 }
