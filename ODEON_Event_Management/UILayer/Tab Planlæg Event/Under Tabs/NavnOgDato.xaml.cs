@@ -74,5 +74,24 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         //        }
         //    }).Start();
         //}
+
+        private void TextBox_EventNavn_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            box.Text = string.Empty;
+            box.Foreground = Brushes.Black;
+            box.GotFocus -= TextBox_EventNavn_GotFocus;
+        }
+
+        private void TextBox_EventNavn_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            if (box.Text.Trim().Equals(string.Empty))
+            {
+                box.Text = "Search...";
+                box.Foreground = Brushes.LightGray;
+                box.GotFocus += TextBox_EventNavn_GotFocus;
+            }
+        }
     }
 }

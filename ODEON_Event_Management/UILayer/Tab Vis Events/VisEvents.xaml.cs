@@ -39,5 +39,24 @@ namespace UILayer
         {
 
         }
+
+        private void Tab_VE_TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            box.Text = string.Empty;
+            box.Foreground = Brushes.Black;
+            box.GotFocus -= Tab_VE_TextBox_GotFocus;
+        }
+
+        private void Tab_VE_TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            if (box.Text.Trim().Equals(string.Empty))
+            {
+                box.Text = "Search...";
+                box.Foreground = Brushes.LightGray;
+                box.GotFocus += Tab_VE_TextBox_GotFocus;
+            }
+        }
     }
 }

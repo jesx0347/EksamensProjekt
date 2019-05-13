@@ -24,7 +24,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         public Sal()
         {
             InitializeComponent();
-            ComboBox_VælgSal.ItemsSource = Controller.Singleton.GetSalNavne();
+            //ComboBox_VælgSal.ItemsSource = Controller.Singleton.GetSalNavne();
         }
 
         private void ComboBox_VælgSal_SelectionChanged(object sender, SelectionChangedEventArgs e)
