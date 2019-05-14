@@ -24,7 +24,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         public Sal()
         {
             InitializeComponent();
-            //ComboBox_VælgSal.ItemsSource = Controller.Singleton.GetSalNavne();
+            ComboBox_VælgSal.ItemsSource = Controller.Singleton.GetSalNavne();
         }
 
         private void ComboBox_VælgSal_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -35,6 +35,11 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
             //    ComboBox_VælgSal.Items.Add(Sale);
             //}
             
+        }
+
+        private void Button_Sal_Næste_Click(object sender, RoutedEventArgs e)
+        {
+            Controller.Singleton.VælgSal(NavnOgDato.TempID, ComboBox_VælgSal.SelectedItem.ToString());
         }
     }
 }
