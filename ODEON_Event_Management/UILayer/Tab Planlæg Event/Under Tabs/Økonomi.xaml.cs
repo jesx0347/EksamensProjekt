@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ApplicationLayer;
 
 namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 {
@@ -26,12 +27,15 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
             InitializeComponent();
         }
 
-        private void TextBox_VO_TextChanged(object sender, TextChangedEventArgs e)
+        private void Button_Økonomi_Næste_Click(object sender, RoutedEventArgs e)
         {
-            new Thread(() =>
+            if (decimal.TryParse(TextBox_VO.Text, out decimal vo))
             {
-                
-            }).Start();
+                if (decimal.TryParse(TextBox_VariableIndtægter.Text, out decimal vi))
+                {
+                    Controller.Singleton.IndskrivVariable(NavnOgDato.TempID, vo, vi, TextBox_VO_Note.Text, TextBox_VI_Note.Text);
+                }
+            }
         }
     }
 }

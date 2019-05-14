@@ -13,16 +13,26 @@ namespace ApplicationLayer
         private DataBaseController DataBase;
         public DataBaseController DBC { get => DataBase; }
         private static Controller _singleton;
-        public static Controller Singleton { get; }  //WORK! WORK!!
+        public static Controller Singleton
+        {
+            get
+            {
+                if (_singleton == null)
+                {
+                    _singleton = new Controller();
+                }
+                return _singleton;
+            }
+        }  //WORK! WORK!!
 
         private readonly SalRepository SalRepo;
         private readonly KategoriRepository KatRepo;
         private readonly ODEONEventRepository OERepo;
 
-        static Controller()
-        {
-            _singleton = new Controller();
-        }
+        //static Controller()
+        //{
+        //    _singleton = new Controller();
+        //}
         private Controller()
         {
             SalRepo = new SalRepository();
