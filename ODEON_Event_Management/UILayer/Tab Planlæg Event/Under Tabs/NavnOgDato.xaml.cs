@@ -61,7 +61,8 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 
         private void Button_NavnOgDato_Næste_Click(object sender, RoutedEventArgs e)
         {
-            TempID = Controller.Singleton.IndskrivNavnOgDato(TextBox_EventNavn.Text, dates);         
+            TempID = Controller.Singleton.IndskrivNavnOgDato(TextBox_EventNavn.Text, dates);
+            MainWindow.MainFrame.Content = Under_Tabs.Sal;
         }
 
         //private void ListView_Datoer_SourceUpdated(object sender, DataTransferEventArgs e)
