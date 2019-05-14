@@ -43,5 +43,43 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
                 }
             }
         }
+
+        private void TextBox_Markedsføring_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            box.Text = string.Empty;
+            box.Foreground = Brushes.Black;
+            box.GotFocus -= TextBox_Markedsføring_GotFocus;
+        }
+
+        private void TextBox_Markedsføring_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            if (box.Text.Trim().Equals(string.Empty))
+            {
+                box.Text = "Indtast beløb...";
+                box.Foreground = Brushes.LightGray;
+                box.GotFocus += TextBox_Markedsføring_GotFocus;
+            }
+        }
+
+        private void TextBox_KODA_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            box.Text = string.Empty;
+            box.Foreground = Brushes.Black;
+            box.GotFocus -= TextBox_KODA_GotFocus;
+        }
+
+        private void TextBox_KODA_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            if (box.Text.Trim().Equals(string.Empty))
+            {
+                box.Text = "Indtast mængde...";
+                box.Foreground = Brushes.LightGray;
+                box.GotFocus += TextBox_Markedsføring_GotFocus;
+            }
+        }
     }
 }
