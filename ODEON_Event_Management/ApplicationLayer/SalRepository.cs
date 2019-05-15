@@ -11,6 +11,7 @@ namespace ApplicationLayer
     {
         public SalRepository() : base()
         {
+            //stub data
             Items.Add(new Sal("Sal 1", 1, 500, 700));
             Items.Add(new Sal("Sal 2", 2, 600, 800));
             Items.Add(new Sal("Sal 3", 3, 400, 600));

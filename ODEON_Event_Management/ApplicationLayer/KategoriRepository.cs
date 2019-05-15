@@ -9,7 +9,14 @@ namespace ApplicationLayer
 {
     public class KategoriRepository : AbstractRepository<Kategori>
     {
-        public KategoriRepository() : base() { }
+        public KategoriRepository() : base()
+        {
+            //stub data
+            Items.Add(new Kategori("jazz", 1));
+            Items.Add(new Kategori("pop & rock", 2));
+            Items.Add(new Kategori("Gastronomi", 3));
+            Items.Add(new Kategori("comedy", 4));
+        }
 
         public Kategori GetKategori(string navn)
         {

@@ -64,7 +64,8 @@ namespace ApplicationLayer
                     ODEONEvent OE = new ODEONEvent(navn, id);
                     OERepo.AddItem(OE);
                 }
-
+                sqlDataReader.Close();
+                connection.Close();
             }
         }
 
@@ -84,6 +85,8 @@ namespace ApplicationLayer
                     Kategori kat = new Kategori(navn, id);
                     KatRepo.AddItem(kat);
                 }
+                sqlDataReader.Close();
+                connection.Close();
             }
         }
 
@@ -105,6 +108,8 @@ namespace ApplicationLayer
                     Sal sal = new Sal(navn, id, leje, cap);
                     SalRepo.AddItem(sal);
                 }
+                sqlDataReader.Close();
+                connection.Close();
             }
 
         }
@@ -155,6 +160,7 @@ namespace ApplicationLayer
                 command.Connection = connection;
                 command.Connection.Open();
                 command.ExecuteNonQuery();
+                connection.Close();
             }
         }
         private void spInsertEventKategori(ODEONEvent OE, Kategori Kat)
@@ -168,6 +174,7 @@ namespace ApplicationLayer
                 command.Connection = connection;
                 command.Connection.Open();
                 command.ExecuteNonQuery();
+                connection.Close();
             }
         }
 
@@ -183,6 +190,7 @@ namespace ApplicationLayer
                 command.Connection = connection;
                 command.Connection.Open();
                 command.ExecuteNonQuery();
+                connection.Close();
             }
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
@@ -195,6 +203,8 @@ namespace ApplicationLayer
                 SqlDataReader sqlDataReader = command.ExecuteReader();
                 sqlDataReader.Read();
                 afvikling.ID = (int)sqlDataReader["DatoId"];
+                sqlDataReader.Close();
+                connection.Close();
             }
         }
 
@@ -210,6 +220,7 @@ namespace ApplicationLayer
                 command.Connection = connection;
                 command.Connection.Open();
                 command.ExecuteNonQuery();
+                connection.Close();
             }
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
@@ -221,6 +232,8 @@ namespace ApplicationLayer
                 SqlDataReader sqlDataReader = command.ExecuteReader();
                 sqlDataReader.Read();
                 afvikling.ID = (int)sqlDataReader["PrisAfvikling"];
+                sqlDataReader.Close();
+                connection.Close();
             }
         }
 
@@ -236,6 +249,7 @@ namespace ApplicationLayer
                 command.Connection = connection;
                 command.Connection.Open();
                 command.ExecuteNonQuery();
+                connection.Close();
             }
         }
 
