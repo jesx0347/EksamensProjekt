@@ -24,8 +24,8 @@ namespace UILayer
     {
         //internal static Controller control = new Controller();
         public Vis_Events vis_Events = new Vis_Events();
-        public Tab_Planlæg_Event.Under_Tabs.NavnOgDato NavnOgDato = new Tab_Planlæg_Event.Under_Tabs.NavnOgDato();
-        public Tab_Planlæg_Event.Under_Tabs.Sal Sal = new Tab_Planlæg_Event.Under_Tabs.Sal();
+        public Tab_Planlæg_Event.Under_Tabs.NavnOgDato NavnOgDato;
+        public Tab_Planlæg_Event.Under_Tabs.Sal Sal;
         public Tab_Planlæg_Event.Under_Tabs.Kategori Kategori = new Tab_Planlæg_Event.Under_Tabs.Kategori();
         public Tab_Planlæg_Event.Under_Tabs.Omkostninger Omkostninger = new Tab_Planlæg_Event.Under_Tabs.Omkostninger();
         public Tab_Planlæg_Event.Under_Tabs.Økonomi Økonomi = new Tab_Planlæg_Event.Under_Tabs.Økonomi();
@@ -33,6 +33,8 @@ namespace UILayer
         public MainWindow()
         {
             InitializeComponent();
+            NavnOgDato = new Tab_Planlæg_Event.Under_Tabs.NavnOgDato(this);
+            Sal = new Tab_Planlæg_Event.Under_Tabs.Sal(this);
         }
 
         private void ButtonVisEvents_Click(object sender, RoutedEventArgs e)

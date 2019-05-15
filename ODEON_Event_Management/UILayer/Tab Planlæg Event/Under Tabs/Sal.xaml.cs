@@ -21,10 +21,17 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
     /// </summary>
     public partial class Sal : Page
     {
+        private MainWindow main;
         public Sal()
         {
             InitializeComponent();
             ComboBox_VælgSal.ItemsSource = Controller.Singleton.GetSalNavne();
+        }
+
+        public Sal(MainWindow mainWindow)
+        {
+            InitializeComponent();
+            main = mainWindow;
         }
 
         private void ComboBox_VælgSal_SelectionChanged(object sender, SelectionChangedEventArgs e)

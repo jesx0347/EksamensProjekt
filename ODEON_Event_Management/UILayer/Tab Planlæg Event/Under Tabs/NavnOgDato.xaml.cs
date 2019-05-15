@@ -23,10 +23,17 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
     public partial class NavnOgDato : Page
     {
         List<DateTime> dates = new List<DateTime>();
+        private MainWindow main;
         public static int TempID { get; private set; }
         public NavnOgDato()
         {
             InitializeComponent();
+        }
+
+        public NavnOgDato(MainWindow mainWindow)
+        {
+            InitializeComponent();
+            main = mainWindow;
         }
 
         private void TextBox_EventNavn_TextChanged(object sender, TextChangedEventArgs e)
@@ -62,7 +69,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         private void Button_NavnOgDato_Næste_Click(object sender, RoutedEventArgs e)
         {
             TempID = Controller.Singleton.IndskrivNavnOgDato(TextBox_EventNavn.Text, dates);
-            MainWindow.MainFrame.Content = Under_Tabs.Sal;
+            main.MainFrame.Content = main.Sal;
         }
 
         //private void ListView_Datoer_SourceUpdated(object sender, DataTransferEventArgs e)
