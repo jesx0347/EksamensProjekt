@@ -22,9 +22,17 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
     /// </summary>
     public partial class Økonomi : Page
     {
+        private MainWindow main;
+
         public Økonomi()
         {
             InitializeComponent();
+        }
+
+        public Økonomi(MainWindow mainWindow)
+        {
+            InitializeComponent();
+            main = mainWindow;
         }
 
         private void Button_Økonomi_Næste_Click(object sender, RoutedEventArgs e)
@@ -34,6 +42,8 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
                 if (decimal.TryParse(TextBox_VariableIndtægter.Text, out decimal vi))
                 {
                     Controller.Singleton.IndskrivVariable(NavnOgDato.TempID, vo, vi, TextBox_VO_Note.Text, TextBox_VI_Note.Text);
+
+                    main.MainFrame.Content = main.BilletType;
                 }
             }
         }

@@ -25,17 +25,20 @@ namespace UILayer
         //internal static Controller control = new Controller();
         public Vis_Events vis_Events = new Vis_Events();
         public Tab_Planlæg_Event.Under_Tabs.NavnOgDato NavnOgDato;
-        public Tab_Planlæg_Event.Under_Tabs.Sal Sal;
+        public Tab_Planlæg_Event.Under_Tabs.Sal Sal /*= new Tab_Planlæg_Event.Under_Tabs.Sal()*/;
         public Tab_Planlæg_Event.Under_Tabs.Kategori Kategori;
-        public Tab_Planlæg_Event.Under_Tabs.Omkostninger Omkostninger = new Tab_Planlæg_Event.Under_Tabs.Omkostninger();
-        public Tab_Planlæg_Event.Under_Tabs.Økonomi Økonomi = new Tab_Planlæg_Event.Under_Tabs.Økonomi();
-        public Tab_Planlæg_Event.Under_Tabs.BilletType BilletType = new Tab_Planlæg_Event.Under_Tabs.BilletType();
+        public Tab_Planlæg_Event.Under_Tabs.Omkostninger Omkostninger;
+        public Tab_Planlæg_Event.Under_Tabs.Økonomi Økonomi;
+        public Tab_Planlæg_Event.Under_Tabs.BilletType BilletType;
         public MainWindow()
         {
             InitializeComponent();
             NavnOgDato = new Tab_Planlæg_Event.Under_Tabs.NavnOgDato(this);
             Sal = new Tab_Planlæg_Event.Under_Tabs.Sal(this);
             Kategori = new Tab_Planlæg_Event.Under_Tabs.Kategori(this);
+            Omkostninger = new Tab_Planlæg_Event.Under_Tabs.Omkostninger(this);
+            Økonomi = new Tab_Planlæg_Event.Under_Tabs.Økonomi(this);
+            BilletType = new Tab_Planlæg_Event.Under_Tabs.BilletType(this);
         }
 
         private void ButtonVisEvents_Click(object sender, RoutedEventArgs e)
@@ -47,6 +50,13 @@ namespace UILayer
         private void ButtonPlanlægEvent_Click(object sender, RoutedEventArgs e)
         {
             spl_PlanlægEvents.Visibility = Visibility.Visible;
+            Tab_Button_Planlæg_Event.IsEnabled = false;
+            Tab_Button_Sal.IsEnabled = false;
+            Tab_Button_Kategori.IsEnabled = false;
+            Tab_Button_Omkostninger.IsEnabled = false;
+            Tab_Button_Økonomi.IsEnabled = false;
+            Tab_Button_BilletType.IsEnabled = false;
+
         }
 
         private void ButtonVisEnkeltEvent_Click(object sender, RoutedEventArgs e)

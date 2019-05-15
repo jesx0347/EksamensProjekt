@@ -32,7 +32,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="Button_BilletType_Tilbage" Content="Tilbagde" HorizontalAlignment="Left" Margin="239,284,-145,-216" VerticalAlignment="Top" Width="75" Click="Button_BilletType_Tilbage_Click"/>
-        <Button x:Name="Button_BilletType_Udfør" Content="Udfør" HorizontalAlignment="Left" Margin="328,284,-234,-216" VerticalAlignment="Top" Width="75" Click="Button_BilletType_Udfør_Click"/>
+        <Button x:Name="Button_BilletType_Tilbage" Content="Tilbage" HorizontalAlignment="Left" Margin="239,284,-145,-216" VerticalAlignment="Top" Width="75" Click="Button_Kategori_Tilbage_Click"/>
+        <Button x:Name="Button_BilletType_Næste" Content="Næste" HorizontalAlignment="Left" Margin="328,284,-234,-216" VerticalAlignment="Top" Width="75" Click="Button_Kategori_Næste_Click"/>
     </Grid>
 </Page>

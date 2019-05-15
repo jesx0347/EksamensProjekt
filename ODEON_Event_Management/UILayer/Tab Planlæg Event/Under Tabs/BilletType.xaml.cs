@@ -22,10 +22,18 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
     public partial class BilletType : Page
     {
 
+        private MainWindow main;
+
         public BilletType()
         {
             InitializeComponent();
 
+        }
+
+        public BilletType(MainWindow mainWindow)
+        {
+            InitializeComponent();
+            main = mainWindow;
         }
 
         //private TextBox CreateTextBox(int row, int column)
@@ -90,7 +98,9 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 
             Controller.Singleton.UploadEvent(NavnOgDato.TempID);
 
-            MessageBox.Show("Hello, world!");
+            MessageBox.Show("Event gemt");
+
+            main.Tab_Button_Planlæg_Event.IsEnabled = true;
         }
     }
 }

@@ -91,14 +91,15 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
             }
         }
 
-        private void Button_BilletType_Tilbage_Click(object sender, RoutedEventArgs e)
+        private void Button_Kategori_Tilbage_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Button_BilletType_Udfør_Click(object sender, RoutedEventArgs e)
+        private void Button_Kategori_Næste_Click(object sender, RoutedEventArgs e)
         {
-
+            //List<Kategori> kats = new List<Kategori>;
+            //Controller.Singleton.VælgKategori(NavnOgDato.TempID, kats);
         }
 
         ////https://social.msdn.microsoft.com/Forums/sqlserver/en-US/ffe90d9d-6487-4d1a-b839-ca810c89ecc4/checkbox-create-automatically-wpf-c?forum=wpf
