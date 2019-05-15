@@ -70,6 +70,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         {
             TempID = Controller.Singleton.IndskrivNavnOgDato(TextBox_EventNavn.Text, dates);
             main.MainFrame.Content = main.Sal;
+            main.Tab_Button_Sal.IsEnabled = true;
         }
 
         //private void ListView_Datoer_SourceUpdated(object sender, DataTransferEventArgs e)
