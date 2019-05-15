@@ -89,5 +89,43 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
                 box.GotFocus += TextBox_Markedsføring_GotFocus;
             }
         }
+
+        private void TextBox_Garantisum_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            box.Text = string.Empty;
+            box.Foreground = Brushes.Black;
+            box.GotFocus -= TextBox_Garantisum_GotFocus;
+        }
+
+        private void TextBox_Garantisum_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            if (box.Text.Trim().Equals(string.Empty))
+            {
+                box.Text = "Indtast mængde...";
+                box.Foreground = Brushes.LightGray;
+                box.GotFocus += TextBox_Garantisum_GotFocus;
+            }
+        }
+
+        private void TextBox_ArtistSplit_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            box.Text = string.Empty;
+            box.Foreground = Brushes.Black;
+            box.GotFocus -= TextBox_ArtistSplit_GotFocus;
+        }
+
+        private void TextBox_ArtistSplit_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            if (box.Text.Trim().Equals(string.Empty))
+            {
+                box.Text = "Indtast mængde...";
+                box.Foreground = Brushes.LightGray;
+                box.GotFocus += TextBox_ArtistSplit_GotFocus;
+            }
+        }
     }
 }

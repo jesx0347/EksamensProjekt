@@ -50,12 +50,12 @@ namespace UILayer
         private void ButtonPlanlægEvent_Click(object sender, RoutedEventArgs e)
         {
             spl_PlanlægEvents.Visibility = Visibility.Visible;
-            //Tab_Button_Planlæg_Event.IsEnabled = false;
-            //Tab_Button_Sal.IsEnabled = false;
-            //Tab_Button_Kategori.IsEnabled = false;
-            //Tab_Button_Omkostninger.IsEnabled = false;
-            //Tab_Button_Økonomi.IsEnabled = false;
-            //Tab_Button_BilletType.IsEnabled = false;
+            Tab_Button_Planlæg_Event.IsEnabled = false;
+            Tab_Button_Sal.IsEnabled = false;
+            Tab_Button_Kategori.IsEnabled = false;
+            Tab_Button_Omkostninger.IsEnabled = false;
+            Tab_Button_Økonomi.IsEnabled = false;
+            Tab_Button_BilletType.IsEnabled = false;
 
         }
 
