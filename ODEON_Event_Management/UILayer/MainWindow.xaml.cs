@@ -25,7 +25,7 @@ namespace UILayer
         //internal static Controller control = new Controller();
         public Vis_Events vis_Events = new Vis_Events();
         public Tab_Planlæg_Event.Under_Tabs.NavnOgDato NavnOgDato;
-        public Tab_Planlæg_Event.Under_Tabs.Sal Sal;
+        public Tab_Planlæg_Event.Under_Tabs.Sal Sal /*= new Tab_Planlæg_Event.Under_Tabs.Sal()*/;
         public Tab_Planlæg_Event.Under_Tabs.Kategori Kategori;
         public Tab_Planlæg_Event.Under_Tabs.Omkostninger Omkostninger;
         public Tab_Planlæg_Event.Under_Tabs.Økonomi Økonomi;
