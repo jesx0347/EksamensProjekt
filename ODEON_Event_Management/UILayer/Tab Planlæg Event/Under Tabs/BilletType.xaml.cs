@@ -21,7 +21,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
     /// </summary>
     public partial class BilletType : Page
     {
-
+        List<string> billetter = new List<string>();
         private MainWindow main;
 
         public BilletType()
@@ -50,6 +50,25 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         private void Button_tilføj_Billet_Click(object sender, RoutedEventArgs e)
         {
             //CreateTextBox(3, 5);
+            string billet = TextBox_BT_Udbud.Text + ";" + TextBox_BT_Pris.Text;
+            if (billetter.Contains(billet))
+            {
+                billetter.Remove(billet);
+            }
+            else
+            {
+                billetter.Add(billet);
+            }
+            TextBox_BT_Udbud.Clear();
+            TextBox_BT_Pris.Clear();
+
+            StringBuilder sb = new StringBuilder();
+            foreach (string item in billetter)
+            {
+                sb.AppendLine(item.ToString());
+            }
+            TextBox_Billet_Windu.Text = sb.ToString();
+
         }
 
         private void TextBox_BT_Udbud_GotFocus(object sender, RoutedEventArgs e)
@@ -93,6 +112,22 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         private void Button_BilletType_Udfør_Click(object sender, RoutedEventArgs e)
         {
             List<Tuple<int, decimal>> billet = new List<Tuple<int, decimal>>();
+
+            //make stuff
+            foreach (string b in billetter)
+            {
+                string[] t = b.Split(';');
+                if (int.TryParse(t[0], out int udbud) && decimal.TryParse(t[1], out decimal pris))
+                {
+                    Tuple<int, decimal> tuple = new Tuple<int, decimal>(udbud, pris);
+                    billet.Add(tuple);
+                }
+                else
+                {
+                    MessageBox.Show("noget er galt");
+                    return;
+                }
+            }
 
             Controller.Singleton.IndskrivBilletTyper(NavnOgDato.TempID, billet);
 
