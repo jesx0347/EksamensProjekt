@@ -117,7 +117,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 
         private void Button_Kategori_Næste_Click(object sender, RoutedEventArgs e)
         {
-
+            main.MainFrame.Content = main.Omkostninger;
         }
 
         private void ListBoxZone_SelectionChanged(object sender, SelectionChangedEventArgs e)
