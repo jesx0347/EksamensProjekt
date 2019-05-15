@@ -98,7 +98,9 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 
             Controller.Singleton.UploadEvent(NavnOgDato.TempID);
 
-            MessageBox.Show("Hello, world!");
+            MessageBox.Show("Event gemt");
+
+            main.Tab_Button_Planlæg_Event.IsEnabled = true;
         }
     }
 }
