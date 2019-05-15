@@ -8,12 +8,22 @@
       d:DesignHeight="419" d:DesignWidth="592"
       Title="Kategori">
 
-    <Grid>
+    <Grid Margin="10,10,0,0.2">
         <Label x:Name="Label_VælgKategori" Content="Vælg Kategori" HorizontalAlignment="Left" Margin="144,99,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CheckBox_Kategori_StandUp" Content="Stand-up" HorizontalAlignment="Left" Margin="267,105,0,0" VerticalAlignment="Top" Checked="CheckBox_Kategori_StandUp_Checked"/>
+        <!--<CheckBox x:Name="CheckBox_Kategori_StandUp" Content="Stand-up" HorizontalAlignment="Left" Margin="267,105,0,0" VerticalAlignment="Top" Checked="CheckBox_Kategori_StandUp_Checked"/>
         <CheckBox x:Name="CheckBox_Kategori_Comedy" Content="Comedy" HorizontalAlignment="Left" Margin="267,125,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="CheckBox_Kategori_Musical" Content="Musical" HorizontalAlignment="Left" Margin="267,145,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CheckBox_Kategori_Percussion" Content="Percussion" HorizontalAlignment="Left" Margin="267,165,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CheckBox_Kategori_Percussion" Content="Percussion" HorizontalAlignment="Left" Margin="267,165,0,0" VerticalAlignment="Top"/>-->
+        
+        <!--<ListBox ItemsSource="{Binding theCheckBoxList}" Margin="144,130,10,10" Loaded="ListBox_Loaded">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox Content="{Binding Name}" IsChecked="{Binding Checked}"></CheckBox>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>-->
+
+        
 
     </Grid>
 </Page>

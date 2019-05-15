@@ -37,5 +37,10 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
                 }
             }
         }
+
+        private void TextBox_VO_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

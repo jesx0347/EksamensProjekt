@@ -10,7 +10,7 @@
 
     <Grid>
         <Label x:Name="Label_Billet_Type" Content="Billet Type" HorizontalAlignment="Left" Margin="63,21,0,0" VerticalAlignment="Top"/>
-        <Grid Margin="171,87,341,311">
+        <Grid Margin="171,87,87,268">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -18,14 +18,11 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width ="*"/>
                 <ColumnDefinition Width ="*"/>
-                <ColumnDefinition Width ="*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" Content="Navn" />
-            <Label Grid.Row="0" Grid.Column="1" Content="Udbud" />
-            <Label Grid.Row="0" Grid.Column="2" Content="Pris" />
-            <TextBox x:Name="TextBox_BT_Navn" Grid.Row="1" Grid.Column="0" Margin="3" Text="Indtast Navn..." FontStyle="Italic" />
-            <TextBox x:Name="TextBox_BT_Udbud" Grid.Row="1" Grid.Column="1" Margin="3" Text="Indtast mængde..." FontStyle="Italic" />
-            <TextBox x:Name="TextBox_BT_Pris" Grid.Row="1" Grid.Column="2" Margin="3" Text="Indtast beløb..." FontStyle="Italic" />
+            <Label Grid.Row="0" Grid.Column="0" Content="Udbud" />
+            <Label Grid.Row="0" Grid.Column="1" Content="Pris" />
+            <TextBox x:Name="TextBox_BT_Udbud" Grid.Row="1" Grid.Column="0" Margin="3" Text="Indtast mængde..." FontStyle="Italic" GotFocus="TextBox_BT_Udbud_GotFocus" LostFocus="TextBox_BT_Udbud_LostFocus"/>
+            <TextBox x:Name="TextBox_BT_Pris" Grid.Row="1" Grid.Column="1" Margin="3" Text="Indtast beløb..." FontStyle="Italic" GotFocus="TextBox_BT_Pris_GotFocus" LostFocus="TextBox_BT_Pris_LostFocus"/>
         </Grid>
         
         <Button x:Name="Button_BilletType_Tilbage" Content="Tilbagde" HorizontalAlignment="Left" Margin="405,389,0,0" VerticalAlignment="Top" Width="75"/>

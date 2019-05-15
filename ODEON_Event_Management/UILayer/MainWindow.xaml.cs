@@ -23,13 +23,13 @@ namespace UILayer
     public partial class MainWindow : Window
     {
         //internal static Controller control = new Controller();
-        private Vis_Events vis_Events = new Vis_Events();
-        private Tab_Planlæg_Event.Under_Tabs.NavnOgDato NavnOgDato = new Tab_Planlæg_Event.Under_Tabs.NavnOgDato();
-        private Tab_Planlæg_Event.Under_Tabs.Sal Sal = new Tab_Planlæg_Event.Under_Tabs.Sal();
-        private Tab_Planlæg_Event.Under_Tabs.Kategori Kategori = new Tab_Planlæg_Event.Under_Tabs.Kategori();
-        private Tab_Planlæg_Event.Under_Tabs.Omkostninger Omkostninger = new Tab_Planlæg_Event.Under_Tabs.Omkostninger();
-        private Tab_Planlæg_Event.Under_Tabs.Økonomi Økonomi = new Tab_Planlæg_Event.Under_Tabs.Økonomi();
-        private Tab_Planlæg_Event.Under_Tabs.BilletType BilletType = new Tab_Planlæg_Event.Under_Tabs.BilletType();
+        public Vis_Events vis_Events = new Vis_Events();
+        public Tab_Planlæg_Event.Under_Tabs.NavnOgDato NavnOgDato = new Tab_Planlæg_Event.Under_Tabs.NavnOgDato();
+        public Tab_Planlæg_Event.Under_Tabs.Sal Sal = new Tab_Planlæg_Event.Under_Tabs.Sal();
+        public Tab_Planlæg_Event.Under_Tabs.Kategori Kategori = new Tab_Planlæg_Event.Under_Tabs.Kategori();
+        public Tab_Planlæg_Event.Under_Tabs.Omkostninger Omkostninger = new Tab_Planlæg_Event.Under_Tabs.Omkostninger();
+        public Tab_Planlæg_Event.Under_Tabs.Økonomi Økonomi = new Tab_Planlæg_Event.Under_Tabs.Økonomi();
+        public Tab_Planlæg_Event.Under_Tabs.BilletType BilletType = new Tab_Planlæg_Event.Under_Tabs.BilletType();
         public MainWindow()
         {
             InitializeComponent();

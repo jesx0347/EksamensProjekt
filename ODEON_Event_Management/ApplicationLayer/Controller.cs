@@ -50,7 +50,7 @@ namespace ApplicationLayer
 
             DataBase = new DataBaseController(SalRepo, KatRepo, OERepo);
 
-            _singleton = this;
+            //_singleton = this;
         }
 
         public IEnumerable<string> GetSalNavne()
