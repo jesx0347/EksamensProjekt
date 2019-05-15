@@ -45,6 +45,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         public class BoolStringClass
         {
             public string TheText { get; set; }
+            public bool IsCheked { get; set; }
         }
 
         //from https://www.c-sharpcorner.com/uploadfile/syedshakeer/checkboxlist-in-wpf/
@@ -53,7 +54,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
             TheList = new ObservableCollection<BoolStringClass>();
             foreach (string kat in Controller.Singleton.GetKategoriNavne())
             {
-                TheList.Add(new BoolStringClass { TheText = kat});
+                TheList.Add(new BoolStringClass { TheText = kat, IsCheked = false });
             }
             this.DataContext = this;
         }
@@ -117,7 +118,17 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 
         private void Button_Kategori_Næste_Click(object sender, RoutedEventArgs e)
         {
-
+            List<string> vs = new List<string>();
+            foreach (BoolStringClass kat in TheList)
+            {
+                if (kat.IsCheked)
+                {
+                    vs.Add(kat.TheText);
+                }
+            }
+            Controller.Singleton.VælgKategori(NavnOgDato.TempID, vs);
+            main.MainFrame.Content = main.Omkostninger;
+            main.Tab_Button_Omkostninger.IsEnabled = true;
         }
 
         private void ListBoxZone_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -128,6 +139,22 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         private void CheckBoxZone_Checked(object sender, RoutedEventArgs e)
         {
             CheckBox chkZone = (CheckBox)sender;
+            string s = (string)chkZone.Content;
+            foreach (BoolStringClass BSC in TheList)
+            {
+                if(BSC.TheText == s)
+                {
+                    if (BSC.IsCheked)
+                    {
+                        BSC.IsCheked = false;
+                    }
+                    else
+                    {
+                        BSC.IsCheked = true;
+                    }
+
+                }
+            }
         }
 
  

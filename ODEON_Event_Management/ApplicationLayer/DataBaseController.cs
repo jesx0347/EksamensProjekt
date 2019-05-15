@@ -12,7 +12,7 @@ namespace ApplicationLayer
 {
     public class DataBaseController
     {
-        private string ConnectionString;
+        internal string ConnectionString;
 
         private readonly SalRepository SalRepo;
         private readonly KategoriRepository KatRepo;
@@ -37,7 +37,14 @@ namespace ApplicationLayer
 
         private void LoadConnectionString()
         {
-            throw new NotImplementedException();
+            ////multiline
+            //Assembly assembly = Assembly.GetExecutingAssembly();
+            //Stream stream = assembly.GetManifestResourceStream(GetType(), "ConnectionString.txt");
+            //StreamReader reader = new StreamReader(stream);
+            //ConnectionString = reader.ReadToEnd();
+
+            //one line version
+            ConnectionString = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream(GetType(), "ConnectionString.txt")).ReadToEnd();
         }
 
         public void StartUp()
@@ -250,6 +257,11 @@ namespace ApplicationLayer
                 command.ExecuteNonQuery();
                 connection.Close();
             }
+        }
+
+        public override string ToString()
+        {
+            return ConnectionString;
         }
 
         //private void spUnderskudsGodtgørelse(UnderskudsGodtgørelse UG)

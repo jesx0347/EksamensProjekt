@@ -41,7 +41,7 @@ namespace ApplicationLayer
 
             DataBase = new DataBaseController(SalRepo, KatRepo, OERepo);
 
-            DataBase.StartUp();
+            //DataBase.StartUp();
         }
 
         public Controller(SalRepository SR, KategoriRepository KR, ODEONEventRepository OER)

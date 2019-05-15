@@ -135,5 +135,11 @@ namespace UnitTestProject1
 
             }
         }
+        [TestMethod]
+        public void TestEmbededResource()
+        {
+            string test = control.DBC.ToString();
+            Assert.AreEqual("test", test);
+        }
     }
 }
