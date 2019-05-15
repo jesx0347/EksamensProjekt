@@ -40,6 +40,8 @@ namespace ApplicationLayer
             OERepo = new ODEONEventRepository();
 
             DataBase = new DataBaseController(SalRepo, KatRepo, OERepo);
+
+            DataBase.StartUp();
         }
 
         public Controller(SalRepository SR, KategoriRepository KR, ODEONEventRepository OER)
