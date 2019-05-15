@@ -41,7 +41,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 
         }
 
-        private void Button_Tilføj_Flere_Datoer_Click(object sender, RoutedEventArgs e)
+        private void Button_Tilføj_Dato_Click(object sender, RoutedEventArgs e)
         {
             //new Thread(() => 
             {
