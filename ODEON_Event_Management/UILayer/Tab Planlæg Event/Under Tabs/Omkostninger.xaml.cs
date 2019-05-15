@@ -21,9 +21,16 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
     /// </summary>
     public partial class Omkostninger : Page
     {
+        private MainWindow main;
         public Omkostninger()
         {
             InitializeComponent();
+        }
+
+        public Omkostninger(MainWindow mainWindow)
+        {
+            InitializeComponent();
+            main = mainWindow;
         }
 
         private void Button_Omkostninger_Næste_Click(object sender, RoutedEventArgs e)
@@ -38,6 +45,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
                         if (double.TryParse(TextBox_ArtistSplit.Text, out double a))
                         {
                             Controller.Singleton.IndskrivOmkostninger(NavnOgDato.TempID, m, k, g, a);
+                            main.MainFrame.Content = main.Økonomi;
                         }
                     }
                 }

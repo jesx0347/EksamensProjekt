@@ -22,10 +22,18 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
     public partial class BilletType : Page
     {
 
+        private MainWindow main;
+
         public BilletType()
         {
             InitializeComponent();
 
+        }
+
+        public BilletType(MainWindow mainWindow)
+        {
+            InitializeComponent();
+            main = mainWindow;
         }
 
         //private TextBox CreateTextBox(int row, int column)

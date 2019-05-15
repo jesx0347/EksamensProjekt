@@ -27,15 +27,18 @@ namespace UILayer
         public Tab_Planlæg_Event.Under_Tabs.NavnOgDato NavnOgDato;
         public Tab_Planlæg_Event.Under_Tabs.Sal Sal;
         public Tab_Planlæg_Event.Under_Tabs.Kategori Kategori;
-        public Tab_Planlæg_Event.Under_Tabs.Omkostninger Omkostninger = new Tab_Planlæg_Event.Under_Tabs.Omkostninger();
-        public Tab_Planlæg_Event.Under_Tabs.Økonomi Økonomi = new Tab_Planlæg_Event.Under_Tabs.Økonomi();
-        public Tab_Planlæg_Event.Under_Tabs.BilletType BilletType = new Tab_Planlæg_Event.Under_Tabs.BilletType();
+        public Tab_Planlæg_Event.Under_Tabs.Omkostninger Omkostninger;
+        public Tab_Planlæg_Event.Under_Tabs.Økonomi Økonomi;
+        public Tab_Planlæg_Event.Under_Tabs.BilletType BilletType;
         public MainWindow()
         {
             InitializeComponent();
             NavnOgDato = new Tab_Planlæg_Event.Under_Tabs.NavnOgDato(this);
             Sal = new Tab_Planlæg_Event.Under_Tabs.Sal(this);
             Kategori = new Tab_Planlæg_Event.Under_Tabs.Kategori(this);
+            Omkostninger = new Tab_Planlæg_Event.Under_Tabs.Omkostninger(this);
+            Økonomi = new Tab_Planlæg_Event.Under_Tabs.Økonomi(this);
+            BilletType = new Tab_Planlæg_Event.Under_Tabs.BilletType(this);
         }
 
         private void ButtonVisEvents_Click(object sender, RoutedEventArgs e)
