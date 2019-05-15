@@ -28,9 +28,11 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
             ComboBox_VælgSal.ItemsSource = Controller.Singleton.GetSalNavne();
         }
 
-        public Sal(MainWindow mainWindow)
+        public Sal(MainWindow mainWindow) : this()
         {
-            InitializeComponent();
+            //InitializeComponent();
+            //ComboBox_VælgSal.ItemsSource = Controller.Singleton.GetSalNavne();
+
             main = mainWindow;
         }
 
