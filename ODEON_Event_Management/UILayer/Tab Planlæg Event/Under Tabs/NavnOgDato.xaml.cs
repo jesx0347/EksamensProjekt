@@ -24,7 +24,9 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
     {
         List<DateTime> dates = new List<DateTime>();
         private MainWindow main;
+
         public static int TempID { get; private set; }
+
         public NavnOgDato()
         {
             InitializeComponent();
