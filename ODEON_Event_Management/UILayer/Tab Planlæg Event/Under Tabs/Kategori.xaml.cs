@@ -27,6 +27,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
     /// </summary>
     public partial class Kategori : Page
     {
+        private MainWindow main;
         //private List<CheckBoxData> _theCheckBoxList = new List<CheckBoxData>();
         //public List<CheckBoxData> theCheckBoxList
         //{
@@ -38,7 +39,11 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
             InitializeComponent();
         }
 
-
+        public Kategori(MainWindow mainWindow)
+        {
+            InitializeComponent();
+            main = mainWindow;
+        }
 
         private void CheckBox_Kategori_StandUp_Checked(object sender, RoutedEventArgs e)
         {

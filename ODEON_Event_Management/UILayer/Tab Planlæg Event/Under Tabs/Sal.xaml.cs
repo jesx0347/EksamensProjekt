@@ -47,6 +47,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         private void Button_Sal_Næste_Click(object sender, RoutedEventArgs e)
         {
             Controller.Singleton.VælgSal(NavnOgDato.TempID, ComboBox_VælgSal.SelectedItem.ToString());
+            main.MainFrame.Content = main.Kategori;
         }
     }
 }
