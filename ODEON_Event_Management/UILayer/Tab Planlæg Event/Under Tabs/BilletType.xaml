@@ -27,6 +27,11 @@
             <TextBox x:Name="TextBox_BT_Udbud" Grid.Row="1" Grid.Column="1" Margin="3" Text="Indtast mængde..." FontStyle="Italic" />
             <TextBox x:Name="TextBox_BT_Pris" Grid.Row="1" Grid.Column="2" Margin="3" Text="Indtast beløb..." FontStyle="Italic" />
         </Grid>
+        
+        <Button x:Name="Button_BilletType_Tilbage" Content="Tilbagde" HorizontalAlignment="Left" Margin="405,389,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="Button_BilletType_Udfør" Content="Udfør" HorizontalAlignment="Left" Margin="494,389,0,0" VerticalAlignment="Top" Width="75"/>
+        
+        <Button x:Name="Button_tilføj_Billet" Content="Tilføj Billet" HorizontalAlignment="Left" Margin="405,87,0,0" VerticalAlignment="Top" Width="75" Click="Button_tilføj_Billet_Click"/>
 
     </Grid>
 </Page>
