@@ -21,8 +21,6 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
     /// </summary>
     public partial class BilletType : Page
     {
-        List<Tuple<int, decimal>> billet = new List<Tuple<int, decimal>>();
-        
 
         public BilletType()
         {
@@ -30,20 +28,20 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 
         }
 
-        private TextBox CreateTextBox(int row, int column)
-        {
-            TextBox tb = new TextBox();
-            tb.Margin = new Thickness(5);
-            tb.Height = 22;
-            tb.Width = 150;
-            Grid.SetColumn(tb, column);
-            Grid.SetRow(tb, row);
-            return tb;
-        }
+        //private TextBox CreateTextBox(int row, int column)
+        //{
+        //    TextBox tb = new TextBox();
+        //    tb.Margin = new Thickness(5);
+        //    tb.Height = 22;
+        //    tb.Width = 150;
+        //    Grid.SetColumn(tb, column);
+        //    Grid.SetRow(tb, row);
+        //    return tb;
+        //}
 
         private void Button_tilføj_Billet_Click(object sender, RoutedEventArgs e)
         {
-            CreateTextBox(3, 5);
+            //CreateTextBox(3, 5);
         }
 
         private void TextBox_BT_Udbud_GotFocus(object sender, RoutedEventArgs e)
@@ -82,6 +80,17 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
                 box.Foreground = Brushes.LightGray;
                 box.GotFocus += TextBox_BT_Pris_GotFocus;
             }
+        }
+
+        private void Button_BilletType_Udfør_Click(object sender, RoutedEventArgs e)
+        {
+            List<Tuple<int, decimal>> billet = new List<Tuple<int, decimal>>();
+
+            Controller.Singleton.IndskrivBilletTyper(NavnOgDato.TempID, billet);
+
+            Controller.Singleton.UploadEvent(NavnOgDato.TempID);
+
+            MessageBox.Show("Hello, world!");
         }
     }
 }
