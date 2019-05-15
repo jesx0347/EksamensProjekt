@@ -29,7 +29,17 @@ namespace DomainLayer
         {
             get
             {
-                throw new NotImplementedException();
+                decimal result = 0;
+                result += Omkostninger.MarkedsFøring;
+                result += Omkostninger.Garantisum;
+                //result += Omkostninger.KODA;
+                result += Omkostninger.VariableOmkostninger;
+                result -= VariableIndtjening.Beløb;
+                foreach (Afvikling afvikling in Afviklinger)
+                {
+                    result += afvikling.Sal.Leje;
+                }
+                return result;
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
@@ -36,9 +37,7 @@ namespace ApplicationLayer
 
         private void LoadConnectionString()
         {
-            StreamReader sr = new StreamReader("../../../ApplicationLayer/ConnectionString.txt");
-            ConnectionString = sr.ReadLine();
-            sr.Close();
+            throw new NotImplementedException();
         }
 
         public void StartUp()
@@ -214,7 +213,7 @@ namespace ApplicationLayer
             {
                 SqlCommand command = new SqlCommand();
                 command.CommandText = "EXECUTE spInsertBilletType @Udbud, @Pris, @Afvikling";
-                command.Parameters.AddWithValue("@Udbud", billetType.Udbud);
+                //command.Parameters.AddWithValue("@Udbud", billetType.Udbud);
                 command.Parameters.AddWithValue("@Pris", billetType.Pris);
                 command.Parameters.AddWithValue("@Afvikling", afvikling.ID);
                 command.Connection = connection;
@@ -231,7 +230,7 @@ namespace ApplicationLayer
                 command.Connection.Open();
                 SqlDataReader sqlDataReader = command.ExecuteReader();
                 sqlDataReader.Read();
-                afvikling.ID = (int)sqlDataReader["PrisAfvikling"];
+                billetType.ID = (int)sqlDataReader["PrisAfvikling"];
                 sqlDataReader.Close();
                 connection.Close();
             }
