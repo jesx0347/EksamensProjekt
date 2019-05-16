@@ -29,6 +29,7 @@ namespace ApplicationLayer
         private readonly KategoriRepository KatRepo;
         private readonly ODEONEventRepository OERepo;
 
+        public UnderskudsGodtgørelse Godtgørelse { get; set; }
         //static Controller()
         //{
         //    _singleton = new Controller();
@@ -41,7 +42,7 @@ namespace ApplicationLayer
 
             DataBase = new DataBaseController(SalRepo, KatRepo, OERepo);
 
-            //DataBase.StartUp();
+            DataBase.StartUp(this);
         }
 
         public Controller(SalRepository SR, KategoriRepository KR, ODEONEventRepository OER)
@@ -83,6 +84,10 @@ namespace ApplicationLayer
             foreach (DateTime item in dates)
             {
                 Making.Afviklinger.Add(new Afvikling(item));
+            }
+            if (DateTime.Now.CompareTo(this.Godtgørelse.UdløbsDato) < 1)
+            {
+                Making.Godtgørelse = this.Godtgørelse;
             }
             OERepo.AddItem(Making);
             return Making.ID;

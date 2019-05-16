@@ -47,26 +47,29 @@ namespace ApplicationLayer
             ConnectionString = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream(GetType(), "ConnectionString.txt")).ReadToEnd();
         }
 
-        public void StartUp()
+        public void StartUp(Controller control)
         {
             DownloadEventListe();
             DownloadKategorier();
             DownloadSale();
+            DownloadUnderskudsGodtgørelse(control);
+            return;
         }
 
         private void DownloadEventListe()
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand();
-                command.CommandText = "EXECUTE [spListOfEvents]";
-                command.Connection = connection;
+                SqlCommand command = new SqlCommand("spListOfEvents", connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                //command.CommandText = "EXECUTE [spListOfEvents]";
+                //command.Connection = connection;
                 command.Connection.Open();
                 SqlDataReader sqlDataReader = command.ExecuteReader();
                 while (sqlDataReader.Read())
                 {
-                    int id = (int)sqlDataReader["[EventId]"];
-                    string navn = (string)sqlDataReader["[EventNavn]"];
+                    int id = (int)sqlDataReader["EventId"];
+                    string navn = (string)sqlDataReader["EventNavn"];
                     ODEONEvent OE = new ODEONEvent(navn, id);
                     OERepo.AddItem(OE);
                 }
@@ -86,8 +89,8 @@ namespace ApplicationLayer
                 SqlDataReader sqlDataReader = command.ExecuteReader();
                 while (sqlDataReader.Read())
                 {
-                    int id = (int)sqlDataReader["[KategoriId]"];
-                    string navn = (string)sqlDataReader["[KategoriNavn]"];
+                    int id = (int)sqlDataReader["KategoriId"];
+                    string navn = (string)sqlDataReader["KategoriNavn"];
                     Kategori kat = new Kategori(navn, id);
                     KatRepo.AddItem(kat);
                 }
@@ -107,10 +110,10 @@ namespace ApplicationLayer
                 SqlDataReader sqlDataReader = command.ExecuteReader();
                 while (sqlDataReader.Read())
                 {
-                    int id = (int)sqlDataReader["[SalId]"];
-                    string navn = (string)sqlDataReader["[SalNavn]"];
-                    decimal leje = (decimal)sqlDataReader["[Leje]"];
-                    int cap = (int)sqlDataReader["[Kapacitet]"];
+                    int id = (int)sqlDataReader["SalId"];
+                    string navn = (string)sqlDataReader["SalNavn"];
+                    decimal leje = (decimal)sqlDataReader["Leje"];
+                    int cap = (int)sqlDataReader["Kapacitet"];
                     Sal sal = new Sal(navn, id, leje, cap);
                     SalRepo.AddItem(sal);
                 }
@@ -118,6 +121,28 @@ namespace ApplicationLayer
                 connection.Close();
             }
 
+        }
+
+        private void DownloadUnderskudsGodtgørelse(Controller controller)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "EXECUTE [spGetUnderskudsGodtgørelse]";
+                command.Connection = connection;
+                command.Connection.Open();
+                SqlDataReader sqlDataReader = command.ExecuteReader();
+                sqlDataReader.Read();
+                
+                double returProcent = Convert.ToDouble(sqlDataReader["ReturProcent"]);
+                DateTime udløbsDato = (DateTime)sqlDataReader["UdløbsDato"];
+                UnderskudsGodtgørelse underskudsGodtgørelse = new UnderskudsGodtgørelse() { Godtgørelse = returProcent, UdløbsDato = udløbsDato};
+
+                controller.Godtgørelse = underskudsGodtgørelse;
+
+                sqlDataReader.Close();
+                connection.Close();
+            }
         }
 
         public void UploadEvent(ODEONEvent upload)
@@ -220,7 +245,7 @@ namespace ApplicationLayer
             {
                 SqlCommand command = new SqlCommand();
                 command.CommandText = "EXECUTE spInsertBilletType @Udbud, @Pris, @Afvikling";
-                //command.Parameters.AddWithValue("@Udbud", billetType.Udbud);
+                command.Parameters.AddWithValue("@Udbud", billetType.Udbud);
                 command.Parameters.AddWithValue("@Pris", billetType.Pris);
                 command.Parameters.AddWithValue("@Afvikling", afvikling.ID);
                 command.Connection = connection;
