@@ -52,6 +52,7 @@ namespace ApplicationLayer
             DownloadEventListe();
             DownloadKategorier();
             DownloadSale();
+            DownloadUnderskudsGodtgørelse();
         }
 
         private void DownloadEventListe()
@@ -118,6 +119,28 @@ namespace ApplicationLayer
                 connection.Close();
             }
 
+        }
+
+        private void DownloadUnderskudsGodtgørelse()
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "EXECUTE [UnderskudsGædtgørelse]";
+                command.Connection = connection;
+                command.Connection.Open();
+                SqlDataReader sqlDataReader = command.ExecuteReader();
+                sqlDataReader.Read();
+                
+                int returProcent = (int)sqlDataReader["[ReturProcent]"];
+                DateTime udløbsDato = (DateTime)sqlDataReader["[UdløbsDato]"];
+                UnderskudsGodtgørelse underskudsGodtgørelse = new UnderskudsGodtgørelse() { Godtgørelse = returProcent, UdløbsDato = udløbsDato};
+
+                Controller.Singleton.Godtgørelse = underskudsGodtgørelse;
+
+                sqlDataReader.Close();
+                connection.Close();
+            }
         }
 
         public void UploadEvent(ODEONEvent upload)
@@ -220,7 +243,7 @@ namespace ApplicationLayer
             {
                 SqlCommand command = new SqlCommand();
                 command.CommandText = "EXECUTE spInsertBilletType @Udbud, @Pris, @Afvikling";
-                //command.Parameters.AddWithValue("@Udbud", billetType.Udbud);
+                command.Parameters.AddWithValue("@Udbud", billetType.Udbud);
                 command.Parameters.AddWithValue("@Pris", billetType.Pris);
                 command.Parameters.AddWithValue("@Afvikling", afvikling.ID);
                 command.Connection = connection;
