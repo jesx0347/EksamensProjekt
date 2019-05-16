@@ -47,27 +47,29 @@ namespace ApplicationLayer
             ConnectionString = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream(GetType(), "ConnectionString.txt")).ReadToEnd();
         }
 
-        public void StartUp()
+        public void StartUp(Controller control)
         {
             DownloadEventListe();
             DownloadKategorier();
             DownloadSale();
-            DownloadUnderskudsGodtgørelse();
+            DownloadUnderskudsGodtgørelse(control);
+            return;
         }
 
         private void DownloadEventListe()
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand();
-                command.CommandText = "EXECUTE [spListOfEvents]";
-                command.Connection = connection;
+                SqlCommand command = new SqlCommand("spListOfEvents", connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                //command.CommandText = "EXECUTE [spListOfEvents]";
+                //command.Connection = connection;
                 command.Connection.Open();
                 SqlDataReader sqlDataReader = command.ExecuteReader();
                 while (sqlDataReader.Read())
                 {
-                    int id = (int)sqlDataReader["[EventId]"];
-                    string navn = (string)sqlDataReader["[EventNavn]"];
+                    int id = (int)sqlDataReader["EventId"];
+                    string navn = (string)sqlDataReader["EventNavn"];
                     ODEONEvent OE = new ODEONEvent(navn, id);
                     OERepo.AddItem(OE);
                 }
@@ -87,8 +89,8 @@ namespace ApplicationLayer
                 SqlDataReader sqlDataReader = command.ExecuteReader();
                 while (sqlDataReader.Read())
                 {
-                    int id = (int)sqlDataReader["[KategoriId]"];
-                    string navn = (string)sqlDataReader["[KategoriNavn]"];
+                    int id = (int)sqlDataReader["KategoriId"];
+                    string navn = (string)sqlDataReader["KategoriNavn"];
                     Kategori kat = new Kategori(navn, id);
                     KatRepo.AddItem(kat);
                 }
@@ -108,10 +110,10 @@ namespace ApplicationLayer
                 SqlDataReader sqlDataReader = command.ExecuteReader();
                 while (sqlDataReader.Read())
                 {
-                    int id = (int)sqlDataReader["[SalId]"];
-                    string navn = (string)sqlDataReader["[SalNavn]"];
-                    decimal leje = (decimal)sqlDataReader["[Leje]"];
-                    int cap = (int)sqlDataReader["[Kapacitet]"];
+                    int id = (int)sqlDataReader["SalId"];
+                    string navn = (string)sqlDataReader["SalNavn"];
+                    decimal leje = (decimal)sqlDataReader["Leje"];
+                    int cap = (int)sqlDataReader["Kapacitet"];
                     Sal sal = new Sal(navn, id, leje, cap);
                     SalRepo.AddItem(sal);
                 }
@@ -121,22 +123,22 @@ namespace ApplicationLayer
 
         }
 
-        private void DownloadUnderskudsGodtgørelse()
+        private void DownloadUnderskudsGodtgørelse(Controller controller)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand();
-                command.CommandText = "EXECUTE [UnderskudsGædtgørelse]";
+                command.CommandText = "EXECUTE [spGetUnderskudsGodtgørelse]";
                 command.Connection = connection;
                 command.Connection.Open();
                 SqlDataReader sqlDataReader = command.ExecuteReader();
                 sqlDataReader.Read();
                 
-                int returProcent = (int)sqlDataReader["[ReturProcent]"];
-                DateTime udløbsDato = (DateTime)sqlDataReader["[UdløbsDato]"];
+                double returProcent = Convert.ToDouble(sqlDataReader["ReturProcent"]);
+                DateTime udløbsDato = (DateTime)sqlDataReader["UdløbsDato"];
                 UnderskudsGodtgørelse underskudsGodtgørelse = new UnderskudsGodtgørelse() { Godtgørelse = returProcent, UdløbsDato = udløbsDato};
 
-                Controller.Singleton.Godtgørelse = underskudsGodtgørelse;
+                controller.Godtgørelse = underskudsGodtgørelse;
 
                 sqlDataReader.Close();
                 connection.Close();
