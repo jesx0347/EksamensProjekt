@@ -53,7 +53,6 @@ namespace ApplicationLayer
             DownloadKategorier();
             DownloadSale();
             DownloadUnderskudsGodtgørelse(control);
-            return;
         }
 
         private void DownloadEventListe()
@@ -143,6 +142,31 @@ namespace ApplicationLayer
                 sqlDataReader.Close();
                 connection.Close();
             }
+        }
+
+        public void DownloadHeleEvent(ODEONEvent OE)
+        {
+            spGetEvent(OE);
+            spGetEventKategorier(OE);
+            spGetAfviklinger(OE);
+            foreach (Afvikling afvikling in OE.Afviklinger)
+            {
+                spGetBilletTyper(afvikling);
+                foreach (BilletType billet in afvikling.BilletTyper)
+                {
+                    spGetSalgsTal(billet);
+                }
+            }
+        }
+
+        public void DownloadHeleEvent(int id)
+        {
+            DownloadHeleEvent(OERepo.GetItem(id));
+        }
+
+        public void DownloadHeleEvent(string navn)
+        {
+            DownloadHeleEvent(OERepo.GetItem(navn));
         }
 
         public void UploadEvent(ODEONEvent upload)
@@ -282,6 +306,120 @@ namespace ApplicationLayer
                 command.ExecuteNonQuery();
                 connection.Close();
             }
+        }
+
+        private void spGetEvent(ODEONEvent OE)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "EXECUTE [spGetEvent]";
+                command.Parameters.AddWithValue("@ID", OE.ID);
+                command.Connection = connection;
+                SqlDataReader Reader = command.ExecuteReader();
+                Reader.Read();
+
+                decimal marked = (decimal)Reader["Markedsføring"];
+                double koda = (double)Reader["Koda"];
+                decimal garanti = (decimal)Reader["Garantisum"];
+                double split = (double)Reader["ArtistSplit"];
+                Omkostninger omkostninger = new Omkostninger(marked, koda, garanti, split);
+                omkostninger.VariableOmkostninger = (decimal)Reader["VariableOmkostninger"];
+                omkostninger.Note = (string)Reader["OmkostningerNote"];
+
+                OE.Omkostninger = omkostninger;
+
+                VariableIndtægter indtægter = new VariableIndtægter();
+                indtægter.Beløb = (decimal)Reader["VariableIndtægter"];
+                indtægter.Note = (string)Reader["IndtægterNote"];
+
+                OE.VariableIndtjening = indtægter;
+
+                DateTime dateTime = (DateTime)Reader["UnderskudsGodtgørelse"];
+                if (dateTime.CompareTo(Controller.Singleton.Godtgørelse.UdløbsDato) == 0)
+                {
+                    OE.Godtgørelse = Controller.Singleton.Godtgørelse;
+                }
+            }
+        }
+
+        private void spGetEventKategorier(ODEONEvent OE)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "EXECUTE [spGetEventKategorier]";
+                command.Parameters.AddWithValue("@EventID", OE.ID);
+                command.Connection = connection;
+                SqlDataReader Reader = command.ExecuteReader();
+                while (Reader.Read())
+                {
+                    OE.Kategorier.Add(KatRepo.GetItem((int)Reader["Kategori"]));
+                }
+            }
+        }
+
+        private void spGetAfviklinger(ODEONEvent OE)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "EXECUTE [spGetAfviklinger]";
+                command.Parameters.AddWithValue("@EventID", OE.ID);
+                command.Connection = connection;
+                SqlDataReader Reader = command.ExecuteReader();
+                while (Reader.Read())
+                {
+                    Afvikling afvikling = new Afvikling((DateTime)Reader["Dato"]);
+                    afvikling.ID = (int)Reader["DatoId"];
+                    afvikling.Sal = SalRepo.GetItem((int)Reader["Sal"]);
+                    OE.Afviklinger.Add(afvikling);
+                }
+            }
+        }
+
+        private void spGetBilletTyper(Afvikling afvikling)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "EXECUTE [spGetBilletTyper]";
+                command.Parameters.AddWithValue("@AfviklingID", afvikling.ID);
+                command.Connection = connection;
+                SqlDataReader Reader = command.ExecuteReader();
+                while (Reader.Read())
+                {
+                    int udbud = (int)Reader["Udbud"];
+                    decimal pris = (decimal)Reader["Pris"];
+                    BilletType billet = new BilletType(udbud, pris);
+                    billet.ID = (int)Reader["BilletTypeId"];
+                    afvikling.BilletTyper.Add(billet);
+                }
+            }
+        }
+
+        private void spGetSalgsTal(BilletType billet)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "EXECUTE [spGetSalgsTal]";
+                command.Parameters.AddWithValue("@BilletID", billet.ID);
+                command.Connection = connection;
+                SqlDataReader Reader = command.ExecuteReader();
+                if (Reader.HasRows)
+                {
+                    while (Reader.Read())
+                    {
+                        DateTime date = (DateTime)Reader["SalgsDato"];
+                        int sold = (int)Reader["Bevægelse"];
+                        SalgsTal tal = new SalgsTal(date, sold);
+                        billet.SamledeSalgsTal.Add(tal);
+                    }
+                }
+                
+            }
+
         }
 
         public override string ToString()
