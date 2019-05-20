@@ -136,6 +136,21 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
             MessageBox.Show("Event gemt");
 
             main.Tab_Button_Planlæg_Event.IsEnabled = true;
+
+            main.NavnOgDato = new NavnOgDato(main);
+
+            main.Sal = new Sal(main);
+
+            main.Kategori = new Kategori(main);
+
+            main.Omkostninger = new Omkostninger(main);
+
+            main.Økonomi = new Økonomi(main);
+
+            main.BilletType = new BilletType(main);
+
+            //Code breakeven page here!  VVV
+            //main.MainFrame.Content = Vis_
         }
     }
 }
