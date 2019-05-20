@@ -14,7 +14,6 @@ CREATE TABLE [UNDERSKUDS_GODTGØRELSE](
 )
 
 CREATE TABLE [EVENT](
-	[EventId]					INT							IDENTITY (1,1),
 	[EventNavn]					NVARCHAR(200)				NOT NULL,
 	[Markedsføring]				MONEY						NOT NULL,
 	[Koda]						FLOAT(24)					NOT NULL,
@@ -25,6 +24,8 @@ CREATE TABLE [EVENT](
 	[VariableIndtægter]			MONEY						NOT NULL,
 	[IndtægterNote]				NVARCHAR(400)				NOT NULL,
 	[UnderskudsGodtgørelse]		DATETIME2					NOT NULL,
+	[EventId]					INT							IDENTITY (1,1)
+
 	CONSTRAINT					[EVENT_PK]					PRIMARY KEY ([EventId]),
 	CONSTRAINT					[UNDERSKUDSGODTGØRELSE_FK]	FOREIGN KEY ([UnderskudsGodtgørelse])
 								REFERENCES [UNDERSKUDS_GODTGØRELSE] (UdløbsDato)

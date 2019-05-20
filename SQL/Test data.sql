@@ -1,11 +1,11 @@
-insert into [UNDERSKUDS_GODTGØRELSE] values(75, CONVERT(datetime2, '2020-01-01 00:00:01 AM',5));
-insert into [UNDERSKUDS_GODTGØRELSE] values(0, CONVERT(datetime2, '2120-01-01 00:00:01 AM',5));
+insert into [UNDERSKUDS_GODTGØRELSE] values(75, '2020-12-31');
+insert into [UNDERSKUDS_GODTGØRELSE] values(0, '2120-12-31');
 
-insert into [EVENT] values(
-	('Kage Smaning', 1000.00, 0, 1500, 15, 0, 'none', 0, 'none', CONVERT(datetime2, '2020-01-01 00:00:01 AM',5)),
-	('Metel', 10000.00, 12, 8000.00, 65, 0, 'none', 0, 'none', CONVERT(datetime2, '2020-01-01 00:00:01 AM',5)),
-	('Jazz', 8000.00, 10, 6500, 60, 0, 'none', 0, 'none', CONVERT(datetime2, '2020-01-01 00:00:01 AM',5)),
-	);
+--insert into [EVENT] values(
+--	('Kage Smaning', 1000.00, 0, 1500, 15, 0, 'none', 0, 'none', CONVERT(datetime2, '2020-01-01 00:00:01 AM',5)),
+--	('Metel', 10000.00, 12, 8000.00, 65, 0, 'none', 0, 'none', CONVERT(datetime2, '2020-01-01 00:00:01 AM',5)),
+--	('Jazz', 8000.00, 10, 6500, 60, 0, 'none', 0, 'none', CONVERT(datetime2, '2020-01-01 00:00:01 AM',5)),
+--	);
 
 insert into [KATEGORI] ([KategoriNavn]) values('Comedy');
 insert into [KATEGORI] ([KategoriNavn]) values('Familie & Børn');
