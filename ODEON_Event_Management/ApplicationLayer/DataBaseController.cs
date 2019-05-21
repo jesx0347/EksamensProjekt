@@ -17,12 +17,14 @@ namespace ApplicationLayer
         private readonly SalRepository SalRepo;
         private readonly KategoriRepository KatRepo;
         private readonly ODEONEventRepository OERepo;
+        private readonly GodtGørelsesRepository GGRepo;
 
-        public DataBaseController(SalRepository SR, KategoriRepository KR, ODEONEventRepository OER)
+        public DataBaseController(SalRepository SR, KategoriRepository KR, ODEONEventRepository OER, GodtGørelsesRepository GGR)
         {
             SalRepo = SR;
             KatRepo = KR;
             OERepo = OER;
+            GGRepo = GGR;
 
             LoadConnectionString();
         }
@@ -31,6 +33,7 @@ namespace ApplicationLayer
             SalRepo = new SalRepository();
             KatRepo = new KategoriRepository();
             OERepo = new ODEONEventRepository();
+            GGRepo = new GodtGørelsesRepository();
 
             LoadConnectionString();
         }
@@ -131,13 +134,16 @@ namespace ApplicationLayer
                 command.Connection = connection;
                 command.Connection.Open();
                 SqlDataReader sqlDataReader = command.ExecuteReader();
-                sqlDataReader.Read();
-                
-                double returProcent = Convert.ToDouble(sqlDataReader["ReturProcent"]);
-                DateTime udløbsDato = (DateTime)sqlDataReader["UdløbsDato"];
-                UnderskudsGodtgørelse underskudsGodtgørelse = new UnderskudsGodtgørelse() { Godtgørelse = returProcent, UdløbsDato = udløbsDato};
+                while (sqlDataReader.Read())
+                {
+                    double returProcent = Convert.ToDouble(sqlDataReader["ReturProcent"]);
+                    DateTime udløbsDato = (DateTime)sqlDataReader["UdløbsDato"];
+                    UnderskudsGodtgørelse underskudsGodtgørelse = new UnderskudsGodtgørelse()
+                        { Godtgørelse = returProcent, UdløbsDato = udløbsDato };
+                    GGRepo.AddItem(underskudsGodtgørelse);
+                }
 
-                controller.Godtgørelse = underskudsGodtgørelse;
+
 
                 sqlDataReader.Close();
                 connection.Close();
@@ -283,10 +289,11 @@ namespace ApplicationLayer
                 command.CommandText = "EXECUTE spGetBilletTypeId @Pris, @Afvikling";
                 command.Parameters.AddWithValue("@Pris", billetType.Pris);
                 command.Parameters.AddWithValue("@Afvikling", afvikling.ID);
+                command.Connection = connection;
                 command.Connection.Open();
                 SqlDataReader sqlDataReader = command.ExecuteReader();
                 sqlDataReader.Read();
-                billetType.ID = (int)sqlDataReader["PrisAfvikling"];
+                billetType.ID = (int)sqlDataReader["BilletTypeId"];
                 sqlDataReader.Close();
                 connection.Close();
             }

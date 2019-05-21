@@ -23,3 +23,6 @@ insert into [KATEGORI] ([KategoriNavn]) values('Rundvisning');
 insert into [KATEGORI] ([KategoriNavn]) values('Show');
 insert into [KATEGORI] ([KategoriNavn]) values('Teater');
 insert into [KATEGORI] ([KategoriNavn]) values('Velvære');
+
+insert into [SAL] (SalNavn, Leje, Kapacitet) values ('Store Sal', 50000, 1740)
+insert into [SAL] (SalNavn, Leje, Kapacitet) values ('Sidescenen', 37500, 600)

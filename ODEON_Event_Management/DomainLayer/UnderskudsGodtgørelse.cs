@@ -18,5 +18,6 @@ namespace DomainLayer
                 return (int)UdløbsDato.Ticks;
             }
         }
+
     }
 }
