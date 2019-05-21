@@ -7,6 +7,8 @@ insert into [UNDERSKUDS_GODTGØRELSE] values(0, '2120-12-31');
 --	('Jazz', 8000.00, 10, 6500, 60, 0, 'none', 0, 'none', CONVERT(datetime2, '2020-01-01 00:00:01 AM',5)),
 --	);
 
+insert into 
+
 insert into [KATEGORI] ([KategoriNavn]) values('Comedy');
 insert into [KATEGORI] ([KategoriNavn]) values('Familie & Børn');
 insert into [KATEGORI] ([KategoriNavn]) values('Fællesskab');

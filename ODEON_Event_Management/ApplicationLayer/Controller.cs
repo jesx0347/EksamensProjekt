@@ -59,6 +59,17 @@ namespace ApplicationLayer
             //_singleton = this;
         }
 
+        public IEnumerable<Tuple<int, string>> GetEventListing()
+        {
+            List<Tuple<int, string>> result = new List<Tuple<int, string>>();
+            foreach (ODEONEvent item in OERepo)
+            {
+                Tuple<int, string> tuple = new Tuple<int, string>(item.ID, item.Navn);
+                result.Add(tuple);
+            }
+            return result;
+        }
+
         public IEnumerable<string> GetSalNavne()
         {
             List<string> result = new List<string>();

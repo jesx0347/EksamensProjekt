@@ -135,5 +135,5 @@ FROM
 	[UNDERSKUDS_GODTGØRELSE]
 WHERE
 	UdløbsDato > GETDATE()
-order by UdløbsDato ASC
+--order by UdløbsDato ASC
 END

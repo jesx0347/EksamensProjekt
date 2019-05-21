@@ -1,6 +1,11 @@
 drop procedure if exists [spListOfEvents]
 drop procedure if exists [spListOfKategorier]
 drop procedure if exists [spListOfSale]
+drop procedure if exists [spGetEvent]
+drop procedure if exists [spGetEventKategorier]
+drop procedure if exists [spGetAfviklinger]
+drop procedure if exists [spGetBilletTyper]
+drop procedure if exists [spGetSalgsTal]
 
 go
 

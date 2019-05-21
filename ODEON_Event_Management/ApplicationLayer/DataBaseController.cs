@@ -343,9 +343,13 @@ namespace ApplicationLayer
                 OE.VariableIndtjening = indtægter;
 
                 DateTime dateTime = (DateTime)Reader["UnderskudsGodtgørelse"];
-                if (dateTime.CompareTo(Controller.Singleton.Godtgørelse.UdløbsDato) == 0)
+                foreach (UnderskudsGodtgørelse gg in GGRepo)
                 {
-                    OE.Godtgørelse = Controller.Singleton.Godtgørelse;
+                    if (gg.UdløbsDato == dateTime)
+                    {
+                        OE.Godtgørelse = gg;
+                        break;
+                    }
                 }
             }
         }
