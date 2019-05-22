@@ -6,7 +6,7 @@
       xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       xmlns:local="clr-namespace:UILayer.Break_Even"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800" d:DataContext="{d:DesignInstance local:BreakEvenChart}"
+      d:DesignHeight="419" d:DesignWidth="592" d:DataContext="{d:DesignInstance local:BreakEvenChart}"
       Title="BreakEvenChart">
 
     <Grid>
