@@ -42,6 +42,7 @@ namespace UILayer
             BilletType = new Tab_Planlæg_Event.Under_Tabs.BilletType(this);
             //vis_Events = new Vis_Events(this);
             BreakEvenChart = new Break_Even.BreakEvenChart(this);
+            MainFrame.Content = vis_Events;
         }
 
         private void ButtonVisEvents_Click(object sender, RoutedEventArgs e)

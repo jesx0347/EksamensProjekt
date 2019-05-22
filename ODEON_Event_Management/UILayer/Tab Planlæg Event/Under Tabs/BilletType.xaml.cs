@@ -157,8 +157,19 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 
             main.BilletType = new BilletType(main);
 
-            //Code breakeven page here!  VVV
-            //main.MainFrame.Content = Vis_
+            main.MainFrame.Content = main.vis_Events;
+
+            main.Tab_Button_Planlæg_Event.IsEnabled = false;
+            main.Tab_Button_Sal.IsEnabled = false;
+            main.Tab_Button_Kategori.IsEnabled = false;
+            main.Tab_Button_Omkostninger.IsEnabled = false;
+            main.Tab_Button_Økonomi.IsEnabled = false;
+            main.Tab_Button_BilletType.IsEnabled = false;
+        }
+
+        private void Button_BilletType_Tilbage_Click(object sender, RoutedEventArgs e)
+        {
+            main.MainFrame.Content = main.Økonomi;
         }
     }
 }
