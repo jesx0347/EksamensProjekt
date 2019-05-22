@@ -67,6 +67,11 @@ namespace UILayer
                 box.GotFocus += Tab_VE_TextBox_GotFocus;
             }
         }
+
+        private void Button_Vis_Breakeven_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
     public class WPFEventView
