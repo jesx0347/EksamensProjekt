@@ -44,6 +44,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
                     Controller.Singleton.IndskrivVariable(NavnOgDato.TempID, vo, vi, TextBox_VO_Note.Text, TextBox_VI_Note.Text);
 
                     main.MainFrame.Content = main.BilletType;
+                    main.Tab_Button_BilletType.IsEnabled = true;
                 }
             }
         }
@@ -51,6 +52,11 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
         private void TextBox_VO_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void Button_Økonomi_Tilbage_Click(object sender, RoutedEventArgs e)
+        {
+            main.MainFrame.Content = main.Omkostninger;
         }
     }
 }

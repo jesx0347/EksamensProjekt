@@ -70,6 +70,8 @@ namespace ApplicationLayer
             return result;
         }
 
+        
+
         public IEnumerable<string> GetSalNavne()
         {
             List<string> result = new List<string>();
@@ -164,5 +166,45 @@ namespace ApplicationLayer
         {
             DataBase.UploadEvent(OERepo.GetItem(ID));
         }
+
+        private Tuple<decimal, decimal> GetBreakEven(ODEONEvent OE)
+        {
+            return new Tuple<decimal, decimal> (OE.BreakEven, OE.Sales);
+        }
+
+        public Tuple<decimal, decimal> GetBreakEven(int ID)
+        {
+            ODEONEvent OE = OERepo.GetItem(ID);
+            return GetBreakEven(OE);
+        }
+
+        public Tuple<decimal, decimal> GetBreakEven(string Navn)
+        {
+            return GetBreakEven(OERepo.GetItem(Navn));
+        }
+
+        private bool IsEventFullyLoaded(ODEONEvent OE)
+        {
+            if (OE.Omkostninger == null)
+            {
+                DataBase.DownloadHeleEvent(OE);
+            }
+            return true;
+        }
+
+        public bool IsEventFullyLoaded(int ID)
+        {
+            return IsEventFullyLoaded(OERepo.GetItem(ID));
+        }
+
+        public bool IsEventFullyLoaded(string Navn)
+        {
+            return IsEventFullyLoaded(OERepo.GetItem(Navn));
+        }
+
+        //public IDisposable SubcribeToEventRepo(IObserver<Tuple<int, string>> observer)
+        //{
+        //    return OERepo.Subscribe(observer);
+        //}
     }
 }

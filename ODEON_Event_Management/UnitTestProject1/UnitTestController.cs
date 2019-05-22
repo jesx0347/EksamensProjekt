@@ -15,6 +15,7 @@ namespace UnitTestProject1
         SalRepository Salrepo;
         KategoriRepository Katrepo;
         Controller control;
+        GodtGørelsesRepository GGRepo;
 
         List<DateTime> dates = new List<DateTime>();
         string name = "Nyt Event";
@@ -26,7 +27,8 @@ namespace UnitTestProject1
             OErepo = new ODEONEventRepository();
             Salrepo = new SalRepository();
             Katrepo = new KategoriRepository();
-            control = new Controller(Salrepo, Katrepo, OErepo);
+            GGRepo = new GodtGørelsesRepository();
+            control = new Controller(Salrepo, Katrepo, OErepo, GGRepo);
 
             dates.Add(new DateTime(2019, 5, 8));
             dates.Add(new DateTime(2019, 5, 28));

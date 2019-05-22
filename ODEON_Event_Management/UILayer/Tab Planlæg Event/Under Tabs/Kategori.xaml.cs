@@ -113,7 +113,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 
         private void Button_Kategori_Tilbage_Click(object sender, RoutedEventArgs e)
         {
-
+            main.MainFrame.Content = main.Sal;
         }
 
         private void Button_Kategori_Næste_Click(object sender, RoutedEventArgs e)
