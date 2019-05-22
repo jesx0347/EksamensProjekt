@@ -50,12 +50,12 @@ namespace ApplicationLayer
             ConnectionString = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream(GetType(), "ConnectionString.txt")).ReadToEnd();
         }
 
-        public void StartUp(Controller control)
+        public void StartUp()
         {
             DownloadEventListe();
             DownloadKategorier();
             DownloadSale();
-            DownloadUnderskudsGodtgørelse(control);
+            DownloadUnderskudsGodtgørelse();
         }
 
         private void DownloadEventListe()
@@ -125,7 +125,7 @@ namespace ApplicationLayer
 
         }
 
-        private void DownloadUnderskudsGodtgørelse(Controller controller)
+        private void DownloadUnderskudsGodtgørelse()
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {

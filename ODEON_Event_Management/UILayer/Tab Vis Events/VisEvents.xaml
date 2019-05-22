@@ -9,13 +9,11 @@
       Title="Vis_Events">
 
     <Grid>
-        <TextBox x:Name="Tab_VE_TextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Seach..." VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" Margin="10,10,0,0" GotFocus="Tab_VE_TextBox_GotFocus" LostFocus="Tab_VE_TextBox_LostFocus"/>
+        <TextBox x:Name="Tab_VE_TextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Seach..." VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" Margin="10,10,0,0" GotFocus="Tab_VE_TextBox_GotFocus" LostFocus="Tab_VE_TextBox_LostFocus" IsEnabled="False"/>
         <DatePicker x:Name="Tab_VE_DatePicker" HorizontalAlignment="Left" Margin="649,16,0,0" VerticalAlignment="Top"/>
         <!--<DataGrid x:Name="Tab_VE_DataGrid" AutoGenerateColumns="True" HorizontalAlignment="Left" Height="284" Margin="10,69,0,0" VerticalAlignment="Top" Width="572" SelectionChanged="DataGrid_SelectionChanged"/>-->
         <ListView Margin="10,38,10,35.2" Name="EventList"></ListView>
         <Button x:Name="Tab_VE_Button_Load_Events_Table" Content="Load Events" HorizontalAlignment="Left" Margin="347,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button x:Name="Tab_VE_Button_Tidligere_Dag" Content="Tidligere Dag" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="427,389,0,0" Click="Button_Click"/>
-        <Button x:Name="Tab_VE_Button_Næste_Dag" Content="Næste Dag" HorizontalAlignment="Left" Margin="507,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
     </Grid>
 </Page>
