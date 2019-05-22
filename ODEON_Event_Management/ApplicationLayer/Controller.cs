@@ -202,9 +202,9 @@ namespace ApplicationLayer
             return IsEventFullyLoaded(OERepo.GetItem(Navn));
         }
 
-        public IDisposable SubcribeToEventRepo(IObserver<Tuple<int, string>> observer)
-        {
-            return OERepo.Subscribe(observer);
-        }
+        //public IDisposable SubcribeToEventRepo(IObserver<Tuple<int, string>> observer)
+        //{
+        //    return OERepo.Subscribe(observer);
+        //}
     }
 }

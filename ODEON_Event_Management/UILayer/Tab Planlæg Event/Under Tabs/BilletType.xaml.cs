@@ -157,7 +157,8 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 
             main.BilletType = new BilletType(main);
 
-            main.MainFrame.Content = main.vis_Events;
+            //main.MainFrame.Content = main.vis_Events;
+            main.MainFrame.Content = new Vis_Events(main);
 
             main.Tab_Button_Planlæg_Event.IsEnabled = false;
             main.Tab_Button_Sal.IsEnabled = false;
