@@ -133,6 +133,14 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
 
             Controller.Singleton.UploadEvent(NavnOgDato.TempID);
 
+            string name = main.NavnOgDato.TextBox_EventNavn.Text;
+
+            int id = NavnOgDato.TempID;
+
+            WPFEventView view = new WPFEventView(name, id);
+
+            main.vis_Events.WPFEventViews.Add(view);
+
             MessageBox.Show("Event gemt");
 
             main.Tab_Button_Planlæg_Event.IsEnabled = true;

@@ -25,7 +25,7 @@ namespace UILayer
     public partial class Vis_Events : Page
     {
         private MainWindow main;
-        List<WPFEventView> WPFEventViews;
+        public List<WPFEventView> WPFEventViews;
         public Vis_Events()
         {
             InitializeComponent();

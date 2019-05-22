@@ -40,12 +40,13 @@ namespace UILayer
             Omkostninger = new Tab_Planlæg_Event.Under_Tabs.Omkostninger(this);
             Økonomi = new Tab_Planlæg_Event.Under_Tabs.Økonomi(this);
             BilletType = new Tab_Planlæg_Event.Under_Tabs.BilletType(this);
-            vis_Events = new Vis_Events(this);
+            //vis_Events = new Vis_Events(this);
             BreakEvenChart = new Break_Even.BreakEvenChart(this);
         }
 
         private void ButtonVisEvents_Click(object sender, RoutedEventArgs e)
         {
+            vis_Events = new Vis_Events(this);
             spl_PlanlægEvents.Visibility = Visibility.Hidden;
             MainFrame.Content = vis_Events;
         }

@@ -70,6 +70,8 @@ namespace ApplicationLayer
             return result;
         }
 
+        
+
         public IEnumerable<string> GetSalNavne()
         {
             List<string> result = new List<string>();
@@ -198,6 +200,11 @@ namespace ApplicationLayer
         public bool IsEventFullyLoaded(string Navn)
         {
             return IsEventFullyLoaded(OERepo.GetItem(Navn));
+        }
+
+        public IDisposable SubcribeToEventRepo(IObserver<Tuple<int, string>> observer)
+        {
+            return OERepo.Subscribe(observer);
         }
     }
 }

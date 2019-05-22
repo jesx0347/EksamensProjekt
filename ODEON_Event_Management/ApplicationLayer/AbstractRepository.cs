@@ -8,7 +8,7 @@ using System.Collections;
 
 namespace ApplicationLayer
 {
-    public abstract class AbstractRepository<TContent> : IEnumerable where TContent : IHaveID
+    public abstract class AbstractRepository<TContent> : IEnumerable where TContent : IHaveID 
     {
         protected List<TContent> Items;
 
@@ -38,5 +38,6 @@ namespace ApplicationLayer
         {
             return ((IEnumerable)Items).GetEnumerator();
         }
+
     }
 }
