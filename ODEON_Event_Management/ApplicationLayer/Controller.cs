@@ -28,8 +28,9 @@ namespace ApplicationLayer
         private readonly SalRepository SalRepo;
         private readonly KategoriRepository KatRepo;
         private readonly ODEONEventRepository OERepo;
+        private readonly GodtGørelsesRepository GGRepo;
 
-        public UnderskudsGodtgørelse Godtgørelse { get; set; }
+        //public UnderskudsGodtgørelse Godtgørelse { get; set; }
         //static Controller()
         //{
         //    _singleton = new Controller();
@@ -39,21 +40,34 @@ namespace ApplicationLayer
             SalRepo = new SalRepository();
             KatRepo = new KategoriRepository();
             OERepo = new ODEONEventRepository();
+            GGRepo = new GodtGørelsesRepository();
 
-            DataBase = new DataBaseController(SalRepo, KatRepo, OERepo);
+            DataBase = new DataBaseController(SalRepo, KatRepo, OERepo, GGRepo);
 
-            DataBase.StartUp(this);
+            DataBase.StartUp();
         }
 
-        public Controller(SalRepository SR, KategoriRepository KR, ODEONEventRepository OER)
+        public Controller(SalRepository SR, KategoriRepository KR, ODEONEventRepository OER, GodtGørelsesRepository GGR)
         {
             SalRepo = SR;
             KatRepo = KR;
             OERepo = OER;
+            GGRepo = GGR;
 
-            DataBase = new DataBaseController(SalRepo, KatRepo, OERepo);
+            DataBase = new DataBaseController(SalRepo, KatRepo, OERepo, GGRepo);
 
             //_singleton = this;
+        }
+
+        public IEnumerable<Tuple<int, string>> GetEventListing()
+        {
+            List<Tuple<int, string>> result = new List<Tuple<int, string>>();
+            foreach (ODEONEvent item in OERepo)
+            {
+                Tuple<int, string> tuple = new Tuple<int, string>(item.ID, item.Navn);
+                result.Add(tuple);
+            }
+            return result;
         }
 
         public IEnumerable<string> GetSalNavne()
@@ -85,9 +99,13 @@ namespace ApplicationLayer
             {
                 Making.Afviklinger.Add(new Afvikling(item));
             }
-            if (DateTime.Now.CompareTo(this.Godtgørelse.UdløbsDato) < 1)
+            foreach (UnderskudsGodtgørelse godtgørelse in GGRepo)
             {
-                Making.Godtgørelse = this.Godtgørelse;
+                if (DateTime.Now.CompareTo(godtgørelse.UdløbsDato) < 1)
+                {
+                    Making.Godtgørelse = godtgørelse;
+                    break;
+                }
             }
             OERepo.AddItem(Making);
             return Making.ID;

@@ -45,6 +45,7 @@
     <Compile Include="AbstractRepository.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="DataBaseController.cs" />
+    <Compile Include="GodtGørelsesRepository.cs" />
     <Compile Include="KategoriRepository.cs" />
     <Compile Include="ODEONEventRepository.cs" />
     <Compile Include="Program.cs" />

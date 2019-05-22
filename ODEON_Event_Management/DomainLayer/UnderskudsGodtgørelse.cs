@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace DomainLayer
 {
-    public class UnderskudsGodtgørelse
+    public class UnderskudsGodtgørelse : IHaveID
     {
         public double Godtgørelse;
         public DateTime UdløbsDato;
+
+        public int ID
+        {
+            get
+            {
+                return (int)UdløbsDato.Ticks;
+            }
+        }
+
     }
 }
