@@ -46,6 +46,7 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
                         {
                             Controller.Singleton.IndskrivOmkostninger(NavnOgDato.TempID, m, k, g, a);
                             main.MainFrame.Content = main.Økonomi;
+                            main.Tab_Button_Økonomi.IsEnabled = true;
                         }
                     }
                 }
@@ -126,6 +127,11 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
                 box.Foreground = Brushes.LightGray;
                 box.GotFocus += TextBox_ArtistSplit_GotFocus;
             }
+        }
+
+        private void Button_Omkostninger_Tilbage_Click(object sender, RoutedEventArgs e)
+        {
+            main.MainFrame.Content = main.Kategori;
         }
     }
 }

@@ -104,5 +104,10 @@ namespace UILayer.Tab_Planlæg_Event.Under_Tabs
                 box.GotFocus += TextBox_EventNavn_GotFocus;
             }
         }
+
+        private void Button_NavnOgDato_Tilbage_Click(object sender, RoutedEventArgs e)
+        {
+            main.MainFrame.Content = main.vis_Events;
+        }
     }
 }
