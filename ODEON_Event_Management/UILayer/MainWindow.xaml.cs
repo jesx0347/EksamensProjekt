@@ -23,7 +23,8 @@ namespace UILayer
     public partial class MainWindow : Window
     {
         //internal static Controller control = new Controller();
-        public Vis_Events vis_Events = new Vis_Events();
+        public Vis_Events vis_Events;
+        public Break_Even.BreakEvenChart BreakEvenChart;
         public Tab_Planlæg_Event.Under_Tabs.NavnOgDato NavnOgDato;
         public Tab_Planlæg_Event.Under_Tabs.Sal Sal /*= new Tab_Planlæg_Event.Under_Tabs.Sal()*/;
         public Tab_Planlæg_Event.Under_Tabs.Kategori Kategori;
@@ -39,6 +40,8 @@ namespace UILayer
             Omkostninger = new Tab_Planlæg_Event.Under_Tabs.Omkostninger(this);
             Økonomi = new Tab_Planlæg_Event.Under_Tabs.Økonomi(this);
             BilletType = new Tab_Planlæg_Event.Under_Tabs.BilletType(this);
+            vis_Events = new Vis_Events(this);
+            BreakEvenChart = new Break_Even.BreakEvenChart(this);
         }
 
         private void ButtonVisEvents_Click(object sender, RoutedEventArgs e)

@@ -42,6 +42,21 @@ namespace DomainLayer
                 return result;
             }
         }
+        public decimal Sales 
+        {
+            get 
+            {
+                decimal result = 0;
+                foreach (Afvikling item in Afviklinger)
+                {
+                    foreach (BilletType billet in item.BilletTyper)
+                    {
+                        result += billet.Pris * billet.TotalSold;
+                    }
+                }
+                return result;
+            }
+        }
 
         public ODEONEvent(string name, int ID)
         {
