@@ -76,6 +76,9 @@
     <Compile Include="Tab Vis Events\VisEvents.xaml.cs">
       <DependentUpon>VisEvents.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vis_BreakEven.xaml.cs">
+      <DependentUpon>Vis_BreakEven.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -113,6 +116,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tab Vis Events\VisEvents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vis_BreakEven.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
