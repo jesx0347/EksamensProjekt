@@ -320,16 +320,17 @@ namespace ApplicationLayer
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand();
-                command.CommandText = "EXECUTE [spGetEvent]";
+                command.CommandText = "EXECUTE [spGetEvent] @ID";
                 command.Parameters.AddWithValue("@ID", OE.ID);
                 command.Connection = connection;
+                connection.Open();
                 SqlDataReader Reader = command.ExecuteReader();
                 Reader.Read();
 
                 decimal marked = (decimal)Reader["Markedsføring"];
-                double koda = (double)Reader["Koda"];
+                double koda = (float)Reader["Koda"];
                 decimal garanti = (decimal)Reader["Garantisum"];
-                double split = (double)Reader["ArtistSplit"];
+                double split = (float)Reader["ArtistSplit"];
                 Omkostninger omkostninger = new Omkostninger(marked, koda, garanti, split);
                 omkostninger.VariableOmkostninger = (decimal)Reader["VariableOmkostninger"];
                 omkostninger.Note = (string)Reader["OmkostningerNote"];
@@ -359,9 +360,10 @@ namespace ApplicationLayer
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand();
-                command.CommandText = "EXECUTE [spGetEventKategorier]";
+                command.CommandText = "EXECUTE [spGetEventKategorier] @EventID";
                 command.Parameters.AddWithValue("@EventID", OE.ID);
                 command.Connection = connection;
+                connection.Open();
                 SqlDataReader Reader = command.ExecuteReader();
                 while (Reader.Read())
                 {
@@ -375,9 +377,10 @@ namespace ApplicationLayer
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand();
-                command.CommandText = "EXECUTE [spGetAfviklinger]";
+                command.CommandText = "EXECUTE [spGetAfviklinger] @EventID";
                 command.Parameters.AddWithValue("@EventID", OE.ID);
                 command.Connection = connection;
+                connection.Open();
                 SqlDataReader Reader = command.ExecuteReader();
                 while (Reader.Read())
                 {
@@ -394,9 +397,10 @@ namespace ApplicationLayer
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand();
-                command.CommandText = "EXECUTE [spGetBilletTyper]";
+                command.CommandText = "EXECUTE [spGetBilletTyper] @AfviklingID";
                 command.Parameters.AddWithValue("@AfviklingID", afvikling.ID);
                 command.Connection = connection;
+                connection.Open();
                 SqlDataReader Reader = command.ExecuteReader();
                 while (Reader.Read())
                 {
@@ -414,9 +418,10 @@ namespace ApplicationLayer
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand();
-                command.CommandText = "EXECUTE [spGetSalgsTal]";
+                command.CommandText = "EXECUTE [spGetSalgsTal] @BilletID";
                 command.Parameters.AddWithValue("@BilletID", billet.ID);
                 command.Connection = connection;
+                connection.Open();
                 SqlDataReader Reader = command.ExecuteReader();
                 if (Reader.HasRows)
                 {
