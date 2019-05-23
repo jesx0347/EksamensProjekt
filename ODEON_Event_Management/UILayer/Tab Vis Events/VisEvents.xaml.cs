@@ -43,25 +43,6 @@ namespace UILayer
             main = mainWindow;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            WPFEventView selected =  (WPFEventView)EventList.SelectedItem;
-
-            if (Controller.Singleton.IsEventFullyLoaded(selected.ID))
-            {
-                Tuple<decimal, decimal> tuple = Controller.Singleton.GetBreakEven(selected.ID);
-                main.BreakEvenChart.Labels.Add(selected.name);
-                    
-
-                //foreach (decimal item in tuple)
-                //{
-                    main.BreakEvenChart.SeriesCollection[0].Values.Add(tuple.Item1);
-                    main.BreakEvenChart.SeriesCollection[1].Values.Add(tuple.Item2);
-                //}
-            }
-
-            main.MainFrame.Content = main.BreakEvenChart;
-        }
 
         //private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         //{
@@ -94,7 +75,23 @@ namespace UILayer
 
         private void Button_Vis_Breakeven_Click(object sender, RoutedEventArgs e)
         {
+            WPFEventView selected = (WPFEventView)EventList.SelectedItem;
 
+            if (Controller.Singleton.IsEventFullyLoaded(selected.ID))
+            {
+                Tuple<decimal, decimal> tuple = Controller.Singleton.GetBreakEven(selected.ID);
+                main.BreakEvenChart.Labels.Add(selected.name);
+
+
+                //foreach (decimal item in tuple)
+                //{
+                main.BreakEvenChart.SeriesCollection[0].Values.Add(tuple.Item1);
+                main.BreakEvenChart.SeriesCollection[1].Values.Add(tuple.Item2);
+                //}
+            }
+
+            main.MainFrame.Content = main.BreakEvenChart;
+            main.Tab_Button_Vis_BreakEven.IsEnabled = true;
         }
     }
 
