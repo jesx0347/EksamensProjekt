@@ -183,6 +183,29 @@ namespace ApplicationLayer
             return GetBreakEven(OERepo.GetItem(Navn));
         }
 
+        private IEnumerable<Tuple<DateTime, decimal>> GetBilleter(ODEONEvent OE)
+        {
+            List<Tuple<DateTime, decimal>> result = new List<Tuple<DateTime, decimal>>();
+            foreach (Afvikling afvik in OE.Afviklinger)
+            {
+                foreach (BilletType billet in afvik.BilletTyper)
+                {
+                    result.Add(new Tuple<DateTime, decimal>(afvik.Dato, billet.Pris));
+                }
+            }
+            return result;
+        }
+
+        public IEnumerable<Tuple<DateTime, decimal>> GetBilleter(string navn)
+        {
+            return GetBilleter(OERepo.GetItem(navn));
+        }
+
+        public IEnumerable<Tuple<DateTime, decimal>> GetBilleter(int ID)
+        {
+            return GetBilleter(OERepo.GetItem(ID));
+        }
+
         private bool IsEventFullyLoaded(ODEONEvent OE)
         {
             if (OE.Omkostninger == null)

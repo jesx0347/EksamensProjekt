@@ -82,6 +82,9 @@
     <Compile Include="Tab Planlæg Event\Under Tabs\Økonomi.xaml.cs">
       <DependentUpon>Økonomi.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tab Vis Events\BilletSalg.xaml.cs">
+      <DependentUpon>BilletSalg.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tab Vis Events\VisEvents.xaml.cs">
       <DependentUpon>VisEvents.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tab Planlæg Event\Under Tabs\Økonomi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tab Vis Events\BilletSalg.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,31 @@
+﻿<Page x:Class="UILayer.Tab_Vis_Events.BilletSalg"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UILayer.Tab_Vis_Events"
+      mc:Ignorable="d" 
+      d:DesignHeight="419" d:DesignWidth="592"
+      Title="Page1">
+
+    <Grid>
+        <ListView Margin="10,10,10,34.2" Name="BilletListe">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Afvikling" Width="150" DisplayMemberBinding="{Binding Afvikling}" />
+                    <GridViewColumn Header="Pris" Width="100" DisplayMemberBinding="{Binding Pris}" />
+                    <GridViewColumn Header="Solgt" Width="250">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Width="250" GotFocus="TextBox_GotFocus"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+            
+        </ListView>
+        <Button Content="Annuller" HorizontalAlignment="Left" Margin="427,390,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Udfør" HorizontalAlignment="Left" Margin="507,390,0,0" VerticalAlignment="Top" Width="75"/>
+    </Grid>
+</Page>

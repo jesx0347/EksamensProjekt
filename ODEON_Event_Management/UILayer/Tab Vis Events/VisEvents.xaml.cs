@@ -96,6 +96,13 @@ namespace UILayer
         {
 
         }
+
+        private void Tab_VE_Button_BilletSalg_Click(object sender, RoutedEventArgs e)
+        {
+            WPFEventView selected = (WPFEventView)EventList.SelectedItem;
+            Controller.Singleton.IsEventFullyLoaded(selected.ID);
+            main.MainFrame.Content = new Tab_Vis_Events.BilletSalg(selected.name, main);
+        }
     }
 
     public class WPFEventView
