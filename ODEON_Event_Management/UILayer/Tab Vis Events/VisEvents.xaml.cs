@@ -104,6 +104,11 @@ namespace UILayer
             Controller.Singleton.IsEventFullyLoaded(selected.ID);
             main.MainFrame.Content = new Tab_Vis_Events.BilletSalg(selected.name, main);
         }
+
+        private void Tab_VE_Button_Load_Events_Table_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
     public class WPFEventView
