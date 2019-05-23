@@ -43,6 +43,7 @@ namespace UILayer
             vis_Events = new Vis_Events(this);
             BreakEvenChart = new Break_Even.BreakEvenChart(this);
             MainFrame.Content = vis_Events;
+            Tab_Button_Vis_Events.IsEnabled = false;
         }
 
         private void ButtonVisEvents_Click(object sender, RoutedEventArgs e)
@@ -50,6 +51,8 @@ namespace UILayer
             vis_Events = new Vis_Events(this);
             spl_PlanlægEvents.Visibility = Visibility.Hidden;
             MainFrame.Content = vis_Events;
+            Tab_Button_Planlæg_Event.IsEnabled = true;
+            Tab_Button_Vis_BreakEven.IsEnabled = true;
         }
 
         private void ButtonPlanlægEvent_Click(object sender, RoutedEventArgs e)
@@ -61,12 +64,16 @@ namespace UILayer
             Tab_Button_Omkostninger.IsEnabled = false;
             Tab_Button_Økonomi.IsEnabled = false;
             Tab_Button_BilletType.IsEnabled = false;
-
+            Tab_Button_Vis_BreakEven.IsEnabled = true;
+            Tab_Button_Vis_Events.IsEnabled = true;
         }
 
-        private void ButtonVisEnkeltEvent_Click(object sender, RoutedEventArgs e)
+        private void Tab_Button_Vis_BreakEven_Click(object sender, RoutedEventArgs e)
         {
-            IsEnabled = false;
+            MainFrame.Content = BreakEvenChart;
+            Tab_Button_Vis_BreakEven.IsEnabled = false;
+            Tab_Button_Planlæg_Event.IsEnabled = true;
+            Tab_Button_Vis_Events.IsEnabled = true;
         }
 
         private void Tab_Button_Omkostninger_Click(object sender, RoutedEventArgs e)

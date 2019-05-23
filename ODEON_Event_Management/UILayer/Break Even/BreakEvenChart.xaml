@@ -18,5 +18,6 @@
                 <lvc:Axis Title="Sold Apps" LabelFormatter="{Binding Formatter}"></lvc:Axis>
             </lvc:CartesianChart.AxisY>
         </lvc:CartesianChart>
+        <Label Content="Break Even" HorizontalAlignment="Left" Margin="243,0,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
     </Grid>
 </Page>

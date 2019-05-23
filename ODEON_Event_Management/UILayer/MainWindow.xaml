@@ -10,7 +10,7 @@
         <StackPanel HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="100" Background="Gray" >
             <Button x:Name="Tab_Button_Vis_Events" Content="Vis Events" Height="33" VerticalAlignment="Top" Width="100" Click="ButtonVisEvents_Click" />
             <Button x:Name="Tab_Button_Planlæg_Event" Content="Planlæg Event" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="34" Click="ButtonPlanlægEvent_Click"/>
-            <Button x:Name="Tab_Button_Vis_BreakEven" Content="Vis Break-even" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="33" Click="ButtonVisEvents_Click"/>
+            <Button x:Name="Tab_Button_Vis_BreakEven" Content="Vis Break-even" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="33" Click="Tab_Button_Vis_BreakEven_Click" IsEnabled="False"/>
         </StackPanel>
         <Frame x:Name="MainFrame" Content="" HorizontalAlignment="Left" Height="419" Margin="200,0,0,0" VerticalAlignment="Top" Width="592" NavigationUIVisibility="Hidden"/>
         <StackPanel x:Name="spl_PlanlægEvents" HorizontalAlignment="Left" Height="419" Margin="100,0,0,0" VerticalAlignment="Top" Width="100" Background="Gray" Visibility="Hidden">

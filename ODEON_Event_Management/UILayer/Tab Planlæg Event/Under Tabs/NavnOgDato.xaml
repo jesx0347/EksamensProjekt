@@ -17,6 +17,7 @@
         <TextBox x:Name="TextBox_Datoer" HorizontalAlignment="Left" Height="114" Margin="232,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="" FontStyle="Normal" IsReadOnly="True"/>
         <Button x:Name="Button_NavnOgDato_Tilbage" Content="Tilbage" HorizontalAlignment="Left" Margin="405,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_NavnOgDato_Tilbage_Click"/>
         <Button x:Name="Button_NavnOgDato_Næste" Content="Næste" HorizontalAlignment="Left" Margin="494,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_NavnOgDato_Næste_Click"/>
+        <Label Content="Planlæg Event" HorizontalAlignment="Left" Margin="219,0,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
 
     </Grid>
 </Page>
