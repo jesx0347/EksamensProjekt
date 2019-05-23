@@ -65,6 +65,7 @@ namespace UILayer
             Tab_Button_Økonomi.IsEnabled = false;
             Tab_Button_BilletType.IsEnabled = false;
             Tab_Button_Vis_BreakEven.IsEnabled = true;
+            Tab_Button_Vis_Events.IsEnabled = true;
         }
 
         private void Tab_Button_Vis_BreakEven_Click(object sender, RoutedEventArgs e)
