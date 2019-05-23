@@ -12,6 +12,7 @@
         <ListView Margin="10,10,10,34.2" Name="BilletListe">
             <ListView.View>
                 <GridView>
+                    <!--<GridViewColumn Header="Billet Type" Width="250" DisplayMemberBinding="{Binding WPFBillet}" />-->
                     <GridViewColumn Header="Afvikling" Width="150" DisplayMemberBinding="{Binding Afvikling}" />
                     <GridViewColumn Header="Pris" Width="100" DisplayMemberBinding="{Binding Pris}" />
                     <GridViewColumn Header="Solgt" Width="250">

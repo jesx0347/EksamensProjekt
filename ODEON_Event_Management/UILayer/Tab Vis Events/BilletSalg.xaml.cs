@@ -58,8 +58,13 @@ namespace UILayer.Tab_Vis_Events
 
     public class WPFBillet
     {
-        public DateTime Afvikling;
-        public decimal Pris;
+        public DateTime Afvikling { get; set; }
+        public decimal Pris { get; set; }
+
+        public override string ToString()
+        {
+            return Pris.ToString() + " " + Afvikling.ToString();
+        }
     }
 
 }
