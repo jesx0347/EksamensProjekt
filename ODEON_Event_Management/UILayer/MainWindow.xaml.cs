@@ -53,6 +53,7 @@ namespace UILayer
             MainFrame.Content = vis_Events;
             Tab_Button_Planlæg_Event.IsEnabled = true;
             Tab_Button_Vis_BreakEven.IsEnabled = true;
+            Tab_Button_Vis_Events.IsEnabled = false;
         }
 
         private void ButtonPlanlægEvent_Click(object sender, RoutedEventArgs e)

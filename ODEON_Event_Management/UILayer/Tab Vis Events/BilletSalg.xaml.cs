@@ -54,6 +54,11 @@ namespace UILayer.Tab_Vis_Events
             box.GotFocus -= TextBox_GotFocus;
 
         }
+
+        private void Button_Annuller_Click(object sender, RoutedEventArgs e)
+        {
+            main.MainFrame.Content = main.vis_Events;
+        }
     }
 
     public class WPFBillet

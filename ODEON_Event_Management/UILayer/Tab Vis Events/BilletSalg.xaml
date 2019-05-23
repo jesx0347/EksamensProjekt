@@ -26,7 +26,7 @@
             </ListView.View>
             
         </ListView>
-        <Button Content="Annuller" HorizontalAlignment="Left" Margin="427,390,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="Button_Annuller" Content="Annuller" HorizontalAlignment="Left" Margin="427,390,0,0" VerticalAlignment="Top" Width="75" Click="Button_Annuller_Click"/>
         <Button Content="Udfør" HorizontalAlignment="Left" Margin="507,390,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Page>
