@@ -9,14 +9,14 @@
       Title="Omkostninger">
 
     <Grid>
-        <Label x:Name="Label_Markedsføringskost" Content="Indtast Markedsføringskost" HorizontalAlignment="Left" Margin="63,27,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_Garantisum" Content="Garantisum" HorizontalAlignment="Left" Margin="141,187,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_KODA" Content="Indtast KODA" HorizontalAlignment="Left" Margin="131,105,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_ArtistSplit" Content="ArtistSplit" HorizontalAlignment="Left" Margin="151,262,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Markedsføringskost" Content="Markedsføringskost" HorizontalAlignment="Left" Margin="102,28,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Garantisum" Content="Garantisum" HorizontalAlignment="Left" Margin="146,187,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_KODA" Content="KODA i %" HorizontalAlignment="Left" Margin="155,105,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_ArtistSplit" Content="ArtistSplit i %" HorizontalAlignment="Left" Margin="136,264,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TextBox_Markedsføring" HorizontalAlignment="Left" Height="23" Margin="217,31,0,0" TextWrapping="Wrap" Text="Indtast beløb..." VerticalAlignment="Top" Width="120" FontStyle="Italic" GotFocus="TextBox_Markedsføring_GotFocus" LostFocus="TextBox_Markedsføring_LostFocus"/>
         <TextBox x:Name="TextBox_KODA" HorizontalAlignment="Left" Height="23" Margin="217,108,0,0" TextWrapping="Wrap" Text="Indtast mængde..." VerticalAlignment="Top" Width="120" FontStyle="Italic" GotFocus="TextBox_KODA_GotFocus" LostFocus="TextBox_KODA_LostFocus"/>
         <TextBox x:Name="TextBox_Garantisum" HorizontalAlignment="Left" Height="23" Margin="217,191,0,0" TextWrapping="Wrap" Text="Indtast beløb..." VerticalAlignment="Top" Width="120" FontStyle="Italic" LostFocus="TextBox_Garantisum_LostFocus" GotFocus="TextBox_Garantisum_GotFocus"/>
-        <TextBox x:Name="TextBox_ArtistSplit" HorizontalAlignment="Left" Height="23" Margin="217,266,0,0" TextWrapping="Wrap" Text="Indtast mængde..." VerticalAlignment="Top" Width="120" FontStyle="Italic" GotFocus="TextBox_ArtistSplit_GotFocus" LostFocus="TextBox_ArtistSplit_LostFocus"/>
+        <TextBox x:Name="TextBox_ArtistSplit" HorizontalAlignment="Left" Height="23" Margin="217,266,0,0" TextWrapping="Wrap" Text="Indtast artistens %" VerticalAlignment="Top" Width="120" FontStyle="Italic" GotFocus="TextBox_ArtistSplit_GotFocus" LostFocus="TextBox_ArtistSplit_LostFocus"/>
         <Button x:Name="Button_Omkostninger_Tilbage" Content="Tilbage" HorizontalAlignment="Left" Margin="405,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_Omkostninger_Tilbage_Click"/>
         <Button x:Name="Button_Omkostninger_Næste" Content="Næste" HorizontalAlignment="Left" Margin="494,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_Omkostninger_Næste_Click" />
 

@@ -80,18 +80,22 @@ namespace UILayer
             if (Controller.Singleton.IsEventFullyLoaded(selected.ID))
             {
                 Tuple<decimal, decimal> tuple = Controller.Singleton.GetBreakEven(selected.ID);
-                main.BreakEvenChart.Labels.Add(selected.name);
 
+                if (main.BreakEvenChart.Labels.Contains(selected.name))
+                {
+                    MessageBox.Show("Eventet er allerede tilføjet til grafen. Vælg vis Break Even for at se grafen");
+                }
+                else
+                {
+                    main.BreakEvenChart.Labels.Add(selected.name);
 
-                //foreach (decimal item in tuple)
-                //{
-                main.BreakEvenChart.SeriesCollection[0].Values.Add(tuple.Item1);
-                main.BreakEvenChart.SeriesCollection[1].Values.Add(tuple.Item2);
-                //}
+                    main.BreakEvenChart.SeriesCollection[0].Values.Add(tuple.Item1);
+                    main.BreakEvenChart.SeriesCollection[1].Values.Add(tuple.Item2);
+
+                    main.MainFrame.Content = main.BreakEvenChart;
+                    main.Tab_Button_Vis_BreakEven.IsEnabled = true;
+                }
             }
-
-            main.MainFrame.Content = main.BreakEvenChart;
-            main.Tab_Button_Vis_BreakEven.IsEnabled = true;
         }
     }
 
