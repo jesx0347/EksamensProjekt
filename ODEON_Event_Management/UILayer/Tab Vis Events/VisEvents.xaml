@@ -14,6 +14,7 @@
         <!--<DataGrid x:Name="Tab_VE_DataGrid" AutoGenerateColumns="True" HorizontalAlignment="Left" Height="284" Margin="10,69,0,0" VerticalAlignment="Top" Width="572" SelectionChanged="DataGrid_SelectionChanged"/>-->
         <ListView Margin="10,38,10,35.2" Name="EventList"></ListView>
         <Button x:Name="Button_Vis_Breakeven" Content="Vis Breakeven" HorizontalAlignment="Left" Margin="347,389,0,10" Width="82" Click="Button_Vis_Breakeven_Click"/>
+        <Label Content="Vis Events" HorizontalAlignment="Left" Margin="243,0,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
 
     </Grid>
 </Page>

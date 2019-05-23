@@ -10,7 +10,7 @@
 
     <Grid>
         <Label x:Name="Label_Billet_Type" Content="Billet Type" HorizontalAlignment="Left" Margin="63,21,0,0" VerticalAlignment="Top"/>
-        <Grid Margin="171,87,87,268">
+        <Grid Margin="166,87,92,267.667">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -24,13 +24,14 @@
             <TextBox x:Name="TextBox_BT_Udbud" Grid.Row="1" Grid.Column="0" Margin="3" Text="Indtast mængde..." FontStyle="Italic" GotFocus="TextBox_BT_Udbud_GotFocus" LostFocus="TextBox_BT_Udbud_LostFocus"/>
             <TextBox x:Name="TextBox_BT_Pris" Grid.Row="1" Grid.Column="1" Margin="3" Text="Indtast beløb..." FontStyle="Italic" GotFocus="TextBox_BT_Pris_GotFocus" LostFocus="TextBox_BT_Pris_LostFocus"/>
         </Grid>
-        
+
         <Button x:Name="Button_BilletType_Tilbage" Content="Tilbage" HorizontalAlignment="Left" Margin="405,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_BilletType_Tilbage_Click"/>
         <Button x:Name="Button_BilletType_Udfør" Content="Udfør" HorizontalAlignment="Left" Margin="494,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_BilletType_Udfør_Click"/>
-        
-        <Button x:Name="Button_tilføj_Billet" Content="Tilføj Billet" HorizontalAlignment="Left" Margin="510,116,0,0" VerticalAlignment="Top" Width="75" Click="Button_tilføj_Billet_Click"/>
-        
-        <TextBox x:Name="TextBox_Billet_Windu" HorizontalAlignment="Left" Height="114" Margin="269,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="" FontStyle="Normal" IsReadOnly="True"/>
+
+        <Button x:Name="Button_tilføj_Billet" Content="Tilføj Billet" HorizontalAlignment="Left" Margin="505,116,0,0" VerticalAlignment="Top" Width="75" Click="Button_tilføj_Billet_Click"/>
+
+        <TextBox x:Name="TextBox_Billet_Windu" HorizontalAlignment="Left" Height="114" Margin="264,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="" FontStyle="Normal" IsReadOnly="True"/>
+        <Label Content="Planlæg Event" HorizontalAlignment="Left" Margin="219,0,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
 
     </Grid>
 </Page>

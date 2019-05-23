@@ -9,19 +9,20 @@
       Title="Økonomi">
 
     <Grid>
-        <Label x:Name="Label_VariableOmkostninger" Content="Variable Omkostninger" HorizontalAlignment="Left" Margin="37,21,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_VO_Note" Content="Note" HorizontalAlignment="Left" Margin="132,52,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_VariableIndtjeninger" Content="Variable Indtægter" HorizontalAlignment="Left" Margin="60,191,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_VI_Note" Content="Note" HorizontalAlignment="Left" Margin="130,222,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="173,25,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TextBox_VO_Note" HorizontalAlignment="Left" Height="124" Margin="173,56,0,0" TextWrapping="Wrap" Text="Indskriv noter..." VerticalAlignment="Top" Width="409" FontStyle="Italic"/>
-        <TextBox x:Name="TextBox_VO" HorizontalAlignment="Left" Height="23" Margin="173,25,0,0" TextWrapping="Wrap" Text="Indtast beløb..." VerticalAlignment="Top" Width="176" FontStyle="Italic"/>
-        
-        <TextBox x:Name="TextBox_VariableIndtægter" HorizontalAlignment="Left" Height="23" Margin="173,195,0,0" TextWrapping="Wrap" Text="Indtast beløb" VerticalAlignment="Top" Width="176" FontStyle="Italic"/>
-        <TextBox x:Name="TextBox_VI_Note" HorizontalAlignment="Left" Height="124" Margin="173,226,0,0" TextWrapping="Wrap" Text="Indskriv noter..." VerticalAlignment="Top" Width="409" FontStyle="Italic"/>
-        
+        <Label x:Name="Label_VariableOmkostninger" Content="Variable Omkostninger" HorizontalAlignment="Left" Margin="37,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_VO_Note" Content="Note" HorizontalAlignment="Left" Margin="132,72,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_VariableIndtjeninger" Content="Variable Indtægter" HorizontalAlignment="Left" Margin="60,211,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_VI_Note" Content="Note" HorizontalAlignment="Left" Margin="130,242,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="173,45,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TextBox_VO_Note" HorizontalAlignment="Left" Height="124" Margin="173,76,0,0" TextWrapping="Wrap" Text="Indskriv noter..." VerticalAlignment="Top" Width="409" FontStyle="Italic"/>
+        <TextBox x:Name="TextBox_VO" HorizontalAlignment="Left" Height="23" Margin="173,45,0,0" TextWrapping="Wrap" Text="Indtast beløb..." VerticalAlignment="Top" Width="176" FontStyle="Italic"/>
+
+        <TextBox x:Name="TextBox_VariableIndtægter" HorizontalAlignment="Left" Height="23" Margin="173,215,0,0" TextWrapping="Wrap" Text="Indtast beløb" VerticalAlignment="Top" Width="176" FontStyle="Italic"/>
+        <TextBox x:Name="TextBox_VI_Note" HorizontalAlignment="Left" Height="124" Margin="173,246,0,0" TextWrapping="Wrap" Text="Indskriv noter..." VerticalAlignment="Top" Width="409" FontStyle="Italic"/>
+
         <Button x:Name="Button_Økonomi_Tilbage" Content="Tilbage" HorizontalAlignment="Left" Margin="405,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_Økonomi_Tilbage_Click"/>
         <Button x:Name="Button_Økonomi_Næste" Content="Næste" HorizontalAlignment="Left" Margin="494,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_Økonomi_Næste_Click"/>
+        <Label Content="Planlæg Event" HorizontalAlignment="Left" Margin="219,0,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
 
     </Grid>
 </Page>
