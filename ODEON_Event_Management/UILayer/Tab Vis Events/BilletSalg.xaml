@@ -9,16 +9,17 @@
       Title="Page1">
 
     <Grid>
-        <ListView Margin="10,10,10,34.2" Name="BilletListe">
+        <ListView Margin="10,10,10,34.2" Name="BilletListe" KeyboardNavigation.TabNavigation="Cycle">
             <ListView.View>
-                <GridView>
+                <GridView x:Name="TheGrid">
                     <!--<GridViewColumn Header="Billet Type" Width="250" DisplayMemberBinding="{Binding WPFBillet}" />-->
-                    <GridViewColumn Header="Afvikling" Width="150" DisplayMemberBinding="{Binding Afvikling}" />
-                    <GridViewColumn Header="Pris" Width="100" DisplayMemberBinding="{Binding Pris}" />
-                    <GridViewColumn Header="Solgt" Width="250">
+                    <GridViewColumn x:Name="ColumnAfvik" Header="Afvikling" Width="150" DisplayMemberBinding="{Binding Afvikling}" />
+                    <GridViewColumn x:Name="ColumnPris" Header="Pris" Width="100" DisplayMemberBinding="{Binding Pris}" />
+                    <!--<GridViewColumn Header="Solgt" Width="250" DisplayMemberBinding="{Binding Box}"/>-->
+                    <GridViewColumn x:Name="ColumnSolgt" Header="Solgt" Width="250" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Width="250" GotFocus="TextBox_GotFocus"/>
+                                <TextBox Height="23" TextWrapping="Wrap" Text="0" Width="250" GotFocus="TextBox_GotFocus"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -26,7 +27,7 @@
             </ListView.View>
             
         </ListView>
-        <Button x:Name="Button_Annuller" Content="Annuller" HorizontalAlignment="Left" Margin="427,390,0,0" VerticalAlignment="Top" Width="75" Click="Button_Annuller_Click"/>
-        <Button Content="Udfør" HorizontalAlignment="Left" Margin="507,390,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="BilletSalg_Button_Annuller" Content="Annuller" HorizontalAlignment="Left" Margin="427,390,0,0" VerticalAlignment="Top" Width="75" Click="BilletSalg_Button_Annuller_Click"/>
+        <Button x:Name="BilletSalg_Button_Udfør" Content="Udfør" HorizontalAlignment="Left" Margin="507,390,0,0" VerticalAlignment="Top" Width="75" Click="BilletSalg_Button_Udfør_Click"/>
     </Grid>
 </Page>

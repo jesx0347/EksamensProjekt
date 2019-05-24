@@ -55,9 +55,18 @@ namespace UILayer.Tab_Vis_Events
 
         }
 
-        private void Button_Annuller_Click(object sender, RoutedEventArgs e)
+        private void BilletSalg_Button_Annuller_Click(object sender, RoutedEventArgs e)
         {
             main.MainFrame.Content = main.vis_Events;
+        }
+
+        private void BilletSalg_Button_Udfør_Click(object sender, RoutedEventArgs e)
+        {
+            //TheGrid
+            foreach (WPFBillet item in BilletListe.Items)
+            {
+                
+            }
         }
     }
 
@@ -65,6 +74,14 @@ namespace UILayer.Tab_Vis_Events
     {
         public DateTime Afvikling { get; set; }
         public decimal Pris { get; set; }
+        public string Box { get; set; }
+
+        //public TextBox Box { get; set; }
+
+        public WPFBillet()
+        {
+            Box = "0";
+        }
 
         public override string ToString()
         {
