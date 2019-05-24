@@ -97,13 +97,15 @@ namespace ApplicationLayer
         public int IndskrivNavnOgDato(string name, IEnumerable<DateTime> dates)
         {
             ODEONEvent Making = new ODEONEvent(name);
+            DateTime date = new DateTime();
             foreach (DateTime item in dates)
             {
                 Making.Afviklinger.Add(new Afvikling(item));
+                date = item;
             }
             foreach (UnderskudsGodtgørelse godtgørelse in GGRepo)
             {
-                if (DateTime.Now.CompareTo(godtgørelse.UdløbsDato) < 1)
+                if (date.CompareTo(godtgørelse.UdløbsDato) < 1)
                 {
                     Making.Godtgørelse = godtgørelse;
                     break;

@@ -75,6 +75,24 @@ namespace UILayer
 
         private void Button_Vis_Breakeven_Click(object sender, RoutedEventArgs e)
         {
+            GoToBreakEven();
+        }
+
+        private void Tab_VE_Button_BilletSalg_Click(object sender, RoutedEventArgs e)
+        {
+            main.Tab_Button_Vis_Events.IsEnabled = true;
+            WPFEventView selected = (WPFEventView)EventList.SelectedItem;
+            Controller.Singleton.IsEventFullyLoaded(selected.ID);
+            main.MainFrame.Content = new Tab_Vis_Events.BilletSalg(selected.name, main);
+        }
+
+        private void EventList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            GoToBreakEven();
+        }
+
+        private void GoToBreakEven()
+        {
             WPFEventView selected = (WPFEventView)EventList.SelectedItem;
 
             if (Controller.Singleton.IsEventFullyLoaded(selected.ID))
@@ -97,16 +115,6 @@ namespace UILayer
                 }
             }
         }
-
-        private void Tab_VE_Button_BilletSalg_Click(object sender, RoutedEventArgs e)
-        {
-            main.Tab_Button_Vis_Events.IsEnabled = true;
-            WPFEventView selected = (WPFEventView)EventList.SelectedItem;
-            Controller.Singleton.IsEventFullyLoaded(selected.ID);
-            main.MainFrame.Content = new Tab_Vis_Events.BilletSalg(selected.name, main);
-        }
-
-
     }
 
     public class WPFEventView
