@@ -34,7 +34,7 @@ namespace DomainLayer
                 result += Omkostninger.Garantisum;
                 //result += Omkostninger.KODA;
                 result += Omkostninger.VariableOmkostninger;
-                result -= VariableIndtjening.Beløb;
+                //result -= VariableIndtjening.Beløb;
                 foreach (Afvikling afvikling in Afviklinger)
                 {
                     result += afvikling.Sal.Leje;
@@ -53,6 +53,19 @@ namespace DomainLayer
                     {
                         result += billet.Pris * billet.TotalSold;
                     }
+                }
+                decimal artistPay = result * (decimal)Omkostninger.ArtistSplit;
+                if(artistPay < Omkostninger.Garantisum)
+                {
+                    artistPay = Omkostninger.Garantisum;
+                }
+                //result -= artistPay;
+                result += VariableIndtjening.Beløb;
+                if (result < BreakEven)
+                {
+                    decimal diff = BreakEven - result;
+                    diff = diff * (decimal)Godtgørelse.Godtgørelse / 100;
+                    result += diff;
                 }
                 return result;
             }
