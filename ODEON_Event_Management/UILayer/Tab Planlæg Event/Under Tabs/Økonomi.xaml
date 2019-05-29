@@ -14,11 +14,11 @@
         <Label x:Name="Label_VariableIndtjeninger" Content="Variable Indtægter" HorizontalAlignment="Left" Margin="60,211,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Label_VI_Note" Content="Note" HorizontalAlignment="Left" Margin="130,242,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="173,45,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TextBox_VO_Note" HorizontalAlignment="Left" Height="124" Margin="173,76,0,0" TextWrapping="Wrap" Text="Indskriv noter..." VerticalAlignment="Top" Width="409" FontStyle="Italic"/>
-        <TextBox x:Name="TextBox_VO" HorizontalAlignment="Left" Height="23" Margin="173,45,0,0" TextWrapping="Wrap" Text="Indtast beløb..." VerticalAlignment="Top" Width="176" FontStyle="Italic"/>
+        <TextBox x:Name="TextBox_VO_Note" HorizontalAlignment="Left" Height="124" Margin="173,76,0,0" TextWrapping="Wrap" Text="Indskriv noter..." VerticalAlignment="Top" Width="409" FontStyle="Italic" GotFocus="TextBox_VO_Note_GotFocus" LostFocus="TextBox_VO_Note_LostFocus"/>
+        <TextBox x:Name="TextBox_VO" HorizontalAlignment="Left" Height="23" Margin="173,45,0,0" TextWrapping="Wrap" Text="Indtast beløb..." VerticalAlignment="Top" Width="176" FontStyle="Italic" GotFocus="TextBox_VO_GotFocus" LostFocus="TextBox_VO_LostFocus"/>
 
-        <TextBox x:Name="TextBox_VariableIndtægter" HorizontalAlignment="Left" Height="23" Margin="173,215,0,0" TextWrapping="Wrap" Text="Indtast beløb" VerticalAlignment="Top" Width="176" FontStyle="Italic"/>
-        <TextBox x:Name="TextBox_VI_Note" HorizontalAlignment="Left" Height="124" Margin="173,246,0,0" TextWrapping="Wrap" Text="Indskriv noter..." VerticalAlignment="Top" Width="409" FontStyle="Italic"/>
+        <TextBox x:Name="TextBox_VI" HorizontalAlignment="Left" Height="23" Margin="173,215,0,0" TextWrapping="Wrap" Text="Indtast beløb" VerticalAlignment="Top" Width="176" FontStyle="Italic" GotFocus="TextBox_VI_GotFocus" LostFocus="TextBox_VI_LostFocus"/>
+        <TextBox x:Name="TextBox_VI_Note" HorizontalAlignment="Left" Height="124" Margin="173,246,0,0" TextWrapping="Wrap" Text="Indskriv noter..." VerticalAlignment="Top" Width="409" FontStyle="Italic" GotFocus="TextBox_VI_Note_GotFocus" LostFocus="TextBox_VI_Note_LostFocus"/>
 
         <Button x:Name="Button_Økonomi_Tilbage" Content="Tilbage" HorizontalAlignment="Left" Margin="405,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_Økonomi_Tilbage_Click"/>
         <Button x:Name="Button_Økonomi_Næste" Content="Næste" HorizontalAlignment="Left" Margin="494,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_Økonomi_Næste_Click"/>
