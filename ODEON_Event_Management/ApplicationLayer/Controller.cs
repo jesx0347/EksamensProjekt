@@ -23,7 +23,7 @@ namespace ApplicationLayer
                 }
                 return _singleton;
             }
-        }  //WORK! WORK!!
+        } 
 
         private readonly SalRepository SalRepo;
         private readonly KategoriRepository KatRepo;

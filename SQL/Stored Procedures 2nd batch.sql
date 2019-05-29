@@ -17,8 +17,8 @@ select distinct
 	[EventNavn]
 from
 	[EVENT] join [AFVIKLING] on [EVENT].EventId = [AFVIKLING].[Event]
-where
-	[Dato] > GETDATE();
+--where
+--	[Dato] > GETDATE();
 end
 
 go
