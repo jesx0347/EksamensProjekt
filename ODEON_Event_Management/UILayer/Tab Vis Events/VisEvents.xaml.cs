@@ -102,6 +102,11 @@ namespace UILayer
         {
             main.Tab_Button_Vis_Events.IsEnabled = true;
             WPFEventView selected = (WPFEventView)EventList.SelectedItem;
+            if(selected == null)
+            {
+                MessageBox.Show("Vælg venlist et event fra listen");
+                return;
+            }
             Controller.Singleton.IsEventFullyLoaded(selected.ID);
             main.MainFrame.Content = new Tab_Vis_Events.BilletSalg(selected.name, main);
         }
