@@ -70,8 +70,6 @@ namespace ApplicationLayer
             return result;
         }
 
-        
-
         public IEnumerable<string> GetSalNavne()
         {
             List<string> result = new List<string>();
@@ -97,15 +95,15 @@ namespace ApplicationLayer
         public int IndskrivNavnOgDato(string name, IEnumerable<DateTime> dates)
         {
             ODEONEvent Making = new ODEONEvent(name);
-            DateTime date = new DateTime();
+            DateTime lastDate = new DateTime();
             foreach (DateTime item in dates)
             {
                 Making.Afviklinger.Add(new Afvikling(item));
-                date = item;
+                lastDate = item;
             }
             foreach (UnderskudsGodtgørelse godtgørelse in GGRepo)
             {
-                if (date.CompareTo(godtgørelse.UdløbsDato) < 1)
+                if (lastDate.CompareTo(godtgørelse.UdløbsDato) < 1)
                 {
                     Making.Godtgørelse = godtgørelse;
                     break;

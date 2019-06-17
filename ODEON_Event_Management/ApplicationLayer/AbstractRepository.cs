@@ -38,6 +38,5 @@ namespace ApplicationLayer
         {
             return ((IEnumerable)Items).GetEnumerator();
         }
-
     }
 }

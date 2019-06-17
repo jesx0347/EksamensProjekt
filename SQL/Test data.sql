@@ -1,3 +1,5 @@
+
+-- execute her fra
 insert into [UNDERSKUDS_GODTGØRELSE] values(75, '2020-12-31');
 insert into [UNDERSKUDS_GODTGØRELSE] values(0, '9999-12-31');
 
@@ -20,6 +22,8 @@ insert into [KATEGORI] ([KategoriNavn]) values('Rundvisning'); -- 13
 insert into [KATEGORI] ([KategoriNavn]) values('Show'); -- 14
 insert into [KATEGORI] ([KategoriNavn]) values('Teater'); -- 15
 insert into [KATEGORI] ([KategoriNavn]) values('Velvære'); -- 16
+-- stop execute her
+
 
 --insert into [EVENT] values(
 --	('Kage Smaning', 1000.00, 0, 1500, 15, 0, 'none', 0, 'none', CONVERT(datetime2, '2020-01-01 00:00:01 AM',5)),

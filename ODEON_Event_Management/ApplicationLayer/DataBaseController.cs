@@ -239,26 +239,45 @@ namespace ApplicationLayer
             }
         }
 
+        //private void spInsertAfvikling(ODEONEvent OE, Afvikling afvikling)
+        //{
+        //    using (SqlConnection connection = new SqlConnection(ConnectionString))
+        //    {
+        //        SqlCommand command = new SqlCommand();
+        //        command.CommandText = "EXECUTE spInsertAfvikling @Dato, @Event, @Sal";
+        //        command.Parameters.AddWithValue("@Dato", afvikling.Dato);
+        //        command.Parameters.AddWithValue("@Event", OE.ID);
+        //        command.Parameters.AddWithValue("@Sal", afvikling.Sal.ID);
+        //        command.Connection = connection;
+        //        command.Connection.Open();
+        //        command.ExecuteNonQuery();
+        //        connection.Close();
+        //    }
+        //    using (SqlConnection connection = new SqlConnection(ConnectionString))
+        //    {
+        //        SqlCommand command = new SqlCommand();
+        //        command.CommandText = "EXECUTE spGetAfviklingId @Event, @Dato";
+        //        command.Parameters.AddWithValue("@Event", OE.ID);
+        //        command.Parameters.AddWithValue("@Dato", afvikling.Dato);
+        //        command.Connection = connection;
+        //        command.Connection.Open();
+        //        SqlDataReader sqlDataReader = command.ExecuteReader();
+        //        sqlDataReader.Read();
+        //        afvikling.ID = (int)sqlDataReader["DatoId"];
+        //        sqlDataReader.Close();
+        //        connection.Close();
+        //    }
+        //}
+
         private void spInsertAfvikling(ODEONEvent OE, Afvikling afvikling)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand();
-                command.CommandText = "EXECUTE spInsertAfvikling @Dato, @Event, @Sal";
+                command.CommandText = "EXECUTE spTest @Dato, @Event, @Sal";
                 command.Parameters.AddWithValue("@Dato", afvikling.Dato);
                 command.Parameters.AddWithValue("@Event", OE.ID);
                 command.Parameters.AddWithValue("@Sal", afvikling.Sal.ID);
-                command.Connection = connection;
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                SqlCommand command = new SqlCommand();
-                command.CommandText = "EXECUTE spGetAfviklingId @Event, @Dato";
-                command.Parameters.AddWithValue("@Event", OE.ID);
-                command.Parameters.AddWithValue("@Dato", afvikling.Dato);
                 command.Connection = connection;
                 command.Connection.Open();
                 SqlDataReader sqlDataReader = command.ExecuteReader();
