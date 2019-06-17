@@ -141,7 +141,7 @@ namespace UnitTestProject1
         public void TestEmbededResource()
         {
             string test = control.DBC.ToString();
-            Assert.AreEqual("test", test);
+            Assert.AreEqual(" Server=EALSQL1.eal.local; Database=B_DB13_2018; User Id=B_STUDENT13; Password=B_OPENDB13;", test);
         }
     }
 }
